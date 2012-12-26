@@ -14,7 +14,7 @@ public class Constants {
 
     //directory
     public static final String ROOT_DIRECTORY = "/data/data/com.example.issoft.Browser";
-    public static final String ROOT_DATA = "/data";
+    public static final String ROOT_DATA = "/";
     public static final String SYSTEM_ROOT_DIRECTORY = "/system";
     public static final String START_PAGE_URL = "http://www.thinkbroadband.com/download.html";
     public static final String GOOGLE_START_PAGE_URL = "http://www.google.com";

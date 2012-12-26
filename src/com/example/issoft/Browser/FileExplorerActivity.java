@@ -10,7 +10,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -34,16 +37,15 @@ public class FileExplorerActivity extends Activity {
     private File path = new File(ROOT_DIRECTORY);
     private String chosenFile;
     private static final int DIALOG_LOAD_FILE = 1000;
+    private Intent resultData;
 
     ListAdapter adapter;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        //hardcode
-        Intent resultData = getIntent();
-        if (resultData.getStringExtra(ACTION_NAME).equals("load")) path = new File(ROOT_DATA);
-        //end
+        resultData = getIntent();
+        if (resultData.getStringExtra(ACTION_NAME).equals("file_manager")) path = new File(ROOT_DATA);
         loadFileList();
 
         showDialog(DIALOG_LOAD_FILE);
@@ -57,89 +59,88 @@ public class FileExplorerActivity extends Activity {
             Log.e(FILE_EXPLORER, " unable to write on the sd card ");
         }
 
-        // Checks whether path exists
-        if (path.exists()) {
-            FilenameFilter filter = new FilenameFilter() {
+        try {
+            /*Checks whether path exists*/
+            if (path.exists()) {
+                FilenameFilter filter = new FilenameFilter() {
+                    @Override
+                    public boolean accept(File dir, String filename) {
+                        File sel = new File(dir, filename);
+                        /*Filters based on whether the file is hidden or not*/
+                        return (sel.isFile() || sel.isDirectory()) && !sel.isHidden();
+                    }
+                };
+
+                String[] fList = path.list(filter);
+                int j = 0;
+
+                /*just add "Save here!" on top of the list if need save something*/
+                if (resultData.getStringExtra(ACTION_NAME).equals("save")) {
+                    fileList = new Item[fList.length + 1];
+                    fileList[0] = new Item("Save here!", R.drawable.save);
+                    j += 1;
+                } else if (resultData.getStringExtra(ACTION_NAME).equals("file_manager")) {
+                    if (fList == null) fileList = new Item[1];
+                    else fileList = new Item[fList.length];
+                } else {
+                    fileList = new Item[fList.length];
+                }
+                if (fList != null) {
+                    for (String aFList : fList) {
+                        fileList[j] = new Item(aFList, R.drawable.file_icon);
+                    /*Convert into file path*/
+                        File sel = new File(path, aFList);
+                    /*Set drawables*/
+                        if (sel.isDirectory()) {
+                            fileList[j].icon = R.drawable.directory_icon;
+                            Log.d("DIRECTORY", fileList[j].file);
+                        } else {
+                            Log.d("FILE", fileList[j].file);
+                        }
+                        j += 1;
+                    }
+                } else {
+                    /*create list only with one element: "UP"*/
+                    Item temp[] = new Item[1];
+                    temp[0] = new Item("Up", R.drawable.directory_up);
+                    fileList = temp;
+                    /*set, because we are don't need check after that*/
+                    firstLvl = true;
+                }
+
+                if (!firstLvl) {
+                    Item temp[] = new Item[fileList.length + 1];
+                    System.arraycopy(fileList, 0, temp, 1, fileList.length);
+                    temp[0] = new Item("Up", R.drawable.directory_up);
+                    fileList = temp;
+                }
+
+            } else {
+                Log.e(FILE_EXPLORER, "path does not exist");
+            }
+
+            adapter = new ArrayAdapter<Item>(this, android.R.layout.select_dialog_item, android.R.id.text1, fileList) {
                 @Override
-                public boolean accept(File dir, String filename) {
-                    File sel = new File(dir, filename);
-                    // Filters based on whether the file is hidden or not
-                    return (sel.isFile() || sel.isDirectory())
-                            && !sel.isHidden();
+                public View getView(int position, View convertView, ViewGroup parent) {
+                    /*creates view*/
+                    View view = super.getView(position, convertView, parent);
+                    TextView textView = (TextView) view.findViewById(android.R.id.text1);
+
+                    /*put the image on the text view*/
+                    textView.setCompoundDrawablesWithIntrinsicBounds(fileList[position].icon, 0, 0, 0);
+
+                    /*add margin between image and text (support various screen densities)*/
+                    int dp5 = (int) (5 * getResources().getDisplayMetrics().density + 0.5f);
+                    textView.setCompoundDrawablePadding(dp5);
+
+                    return view;
                 }
             };
-
-            Intent resultData = getIntent();
-            String[] fList = path.list(filter);
-            int j = 0;
-
-            //just add "Save here!" on top of the list if need save something
-            if (resultData.getStringExtra(ACTION_NAME).equals("save")) {
-                fileList = new Item[fList.length + 1];
-                fileList[0] = new Item("Save here!", R.drawable.save);
-                j += 1;
-            }
-            /*TODO: need resolve this problem
-            simple list with files
-            * need NullPointerException catch*/
-            else {
-                fileList = new Item[fList.length];
-            }
-
-            for (int i = 0; i < fList.length; i++) {
-                fileList[j] = new Item(fList[i], R.drawable.file_icon);
-                // Convert into file path
-                File sel = new File(path, fList[i]);
-                // Set drawables
-                if (sel.isDirectory()) {
-                    fileList[j].icon = R.drawable.directory_icon;
-                    Log.d("DIRECTORY", fileList[j].file);
-                } else {
-                    Log.d("FILE", fileList[j].file);
-                }
-                j += 1;
-            }
-
-            /**/
-
-            if (!firstLvl) {
-                Item temp[] = new Item[fileList.length + 1];
-                for (int i = 0; i < fileList.length; i++) {
-                    temp[i + 1] = fileList[i];
-                }
-                temp[0] = new Item("Up", R.drawable.directory_up);
-                fileList = temp;
-            }
-        } else
-
-        {
-            Log.e(FILE_EXPLORER, "path does not exist");
+        } catch (NullPointerException e) {
+            /*TODO: if files not exist need show UP button*/
+            Toast.makeText(getApplicationContext(), "There is no files in this directory.", Toast.LENGTH_LONG).show();
+            Log.e(FILE_EXPLORER, "exception:" + e + FileExplorerActivity.class);
         }
-
-        adapter = new ArrayAdapter<Item>(this,
-                android.R.layout.select_dialog_item, android.R.id.text1,
-                fileList)
-
-        {
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                // creates view
-                View view = super.getView(position, convertView, parent);
-                TextView textView = (TextView) view
-                        .findViewById(android.R.id.text1);
-
-                // put the image on the text view
-                textView.setCompoundDrawablesWithIntrinsicBounds(
-                        fileList[position].icon, 0, 0, 0);
-
-                // add margin between image and text (support various screen
-                // densities)
-                int dp5 = (int) (5 * getResources().getDisplayMetrics().density + 0.5f);
-                textView.setCompoundDrawablePadding(dp5);
-
-                return view;
-            }
-        };
     }
 
     private class Item {
@@ -192,19 +193,17 @@ public class FileExplorerActivity extends Activity {
                             Log.d(FILE_EXPLORER, path.getAbsolutePath());
                         }
 
-                        // Checks if 'up' was clicked
+                        /*Checks if 'up' was clicked*/
                         else if (chosenFile.equalsIgnoreCase("up") && !sel.exists()) {
-
-                            // present directory removed from list
+                            /*present directory removed from list*/
                             String s = str.remove(str.size() - 1);
 
-                            // path modified to exclude present directory
-                            path = new File(path.toString().substring(0,
-                                    path.toString().lastIndexOf(s)));
+                            /*path modified to exclude present directory*/
+                            path = new File(path.toString().substring(0, path.toString().lastIndexOf(s)));
                             fileList = null;
 
-                            // if there are no more directories in the list, then
-                            // its the first level
+                            /*if there are no more directories in the list, then
+                            its the first level*/
                             if (str.isEmpty()) {
                                 firstLvl = true;
                             }
@@ -215,7 +214,7 @@ public class FileExplorerActivity extends Activity {
                             Log.d(FILE_EXPLORER, path.getAbsolutePath());
 
                         }
-                        // File or Save picked
+                        /*File or Save picked*/
                         else {
                             Intent resultData = new Intent();
                             resultData.putExtra(FILE_URL, sel.getAbsolutePath());

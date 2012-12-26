@@ -167,7 +167,7 @@ public class BrowserActivity extends Activity {
 
     private void startFileManager() {
         Intent intent = new Intent(this, FileExplorerActivity.class);
-        intent.putExtra(ACTION_NAME, "load");
+        intent.putExtra(ACTION_NAME, "file_manager");
         startActivity(intent);
 
         Log.d(DOWNLOAD_MANAGER, " activity was send to : " + FileExplorerActivity.class);
