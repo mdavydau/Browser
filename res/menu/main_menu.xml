@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/save"
+        android:title="@string/savePage"/>
+    <item
+        android:id="@+id/load"
+        android:title="@string/loadPage"/>
+
+    <group android:id="@+id/loadList" />
+
+    <item
+        android:id="@+id/exit"
+        android:title="@string/exitOption"/>
+
+    <item
+        android:id="@+id/player"
+        android:title="@string/mp3PlayerOption"/>
+
+    <item
+        android:id="@+id/file_manager"
+        android:title="@string/fileManager"/>
+</menu>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Browser</string>
+    <string name="urlHint">Type URL here</string>
+    <string name="go">Go!</string>
+    <string name="back"><![CDATA[<--]]></string>
+    <string name="next"><![CDATA[-->]]></string>
+    <string name="exitOption">Exit</string>
+    <string name="savePage">Save</string>
+    <string name="loadPage">Load</string>
+    <string name="rightArrow">Next</string>
+    <string name="leftArrow">Back</string>
+    <string name="status">Status</string>
+    <string name="dialog_fire_missiles">Fire missiles</string>
+    <string name="fire">Fire</string>
+    <string name="cancel">Cancel</string>
+    <string name="exit">Exit</string>
+    <string name="save_data">Save</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="saved">Saved</string>
+    <string name="download_message">Choose download dialog property:</string>
+    <string name="download_title">Download</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+    <string name="play_str">PLAY</string>
+    <string name="pause_str">PAUSE</string>
+    <string name="mp3PlayerOption">Start mp3</string>
+    <string name="prev_button">Previous button</string>
+    <string name="next_button">Next button</string>
+    <string name="newPlayList">New playlist</string>
+    <string name="openPlayList">Open playlist</string>
+    <string name="scan">Scan again</string>
+    <string name="fileManager">Open file manager</string>
+</resources>

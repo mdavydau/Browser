@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button
+        android:text="@string/play_str"
+        android:textSize="15pt"
+        android:textStyle="bold"
+        android:id="@+id/ButtonPlayStop"
+        android:layout_width="141dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"/>
+
+    <SeekBar
+        android:id="@+id/SeekBar01"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/ButtonPlayStop"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prev_button"
+        android:id="@+id/prev_button"
+        android:layout_toLeftOf="@+id/ButtonPlayStop"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="7dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next_button"
+        android:id="@+id/next_button"
+        android:layout_toRightOf="@+id/ButtonPlayStop"
+        android:layout_alignTop="@+id/prev_button"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="47dp"
+        android:layout_alignLeft="@+id/SeekBar01"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/relativeLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/newPlayList"
+            android:id="@+id/newPlayList"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/openPlayList"
+            android:id="@+id/openPlayList"
+            android:layout_toRightOf="@+id/newPlayList"
+            android:layout_alignBottom="@+id/newPlayList"
+            android:layout_toLeftOf="@+id/scan"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/scan"
+            android:id="@+id/scan"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/newPlayList"/>
+    </RelativeLayout>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:layout_toLeftOf="@+id/ButtonPlayStop"
+        android:layout_below="@+id/SeekBar01"
+        android:layout_alignRight="@+id/SeekBar01"
+        android:layout_above="@+id/relativeLayout"/>
+</RelativeLayout>
