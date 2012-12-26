@@ -79,7 +79,8 @@ public class FileExplorerActivity extends Activity {
                 fileList[0] = new Item("Save here!", R.drawable.save);
                 j += 1;
             }
-            /*simple list with files
+            /*TODO: Find null problem
+            simple list with files
             * need NullPointerException catch*/
             else {
                 fileList = new Item[fList.length];
