@@ -81,7 +81,7 @@ public class FileExplorerActivity extends Activity {
             }
             /*TODO: need resolve this problem
             simple list with files
-            * need NullPointerException catch*/
+            * need NullPointerException catch or not*/
             else {
                 fileList = new Item[fList.length];
             }
