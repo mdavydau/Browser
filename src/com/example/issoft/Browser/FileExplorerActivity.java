@@ -57,7 +57,7 @@ public class FileExplorerActivity extends Activity {
             Log.e(FILE_EXPLORER, " unable to write on the sd card ");
         }
 
-        // Checks whether path exists or not
+        // Checks whether path exists
         if (path.exists()) {
             FilenameFilter filter = new FilenameFilter() {
                 @Override
