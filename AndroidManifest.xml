@@ -22,11 +22,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FileExplorerActivity"
+            android:name=".AlertExplorerActivity"
             android:label="DirectoryBrowser "/>
         <activity
-            android:name=".Mp3playerActivity"
+            android:name=".PlayerActivity"
             android:label="Mp3 player"/>
+        <activity
+            android:name=".FileExplorerActivity"
+            android:label="File explorer"/>
 
     </application>
 </manifest> 

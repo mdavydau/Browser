@@ -22,6 +22,7 @@ public class Constants {
     //extra response
     public static final String FILE_URL = "file_URL";
     public static final String ACTION_NAME = "action_name";
+    public static final String START_PATH = "start_path";
 
     //extra request
     public static final int REQUEST_LOAD_WEB_PAGE = 001;

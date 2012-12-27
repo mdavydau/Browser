@@ -29,7 +29,7 @@ import java.util.Vector;
  * User: nikitadavydov
  * Date: 12/17/12
  */
-public class Mp3playerActivity extends Activity {
+public class PlayerActivity extends Activity {
     private Button buttonPlayStop;
 
     private SeekBar seekBar;

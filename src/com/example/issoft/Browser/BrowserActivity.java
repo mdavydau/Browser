@@ -167,7 +167,7 @@ public class BrowserActivity extends Activity {
 
     private void startFileManager() {
         Intent intent = new Intent(this, FileExplorerActivity.class);
-        intent.putExtra(ACTION_NAME, "file_manager");
+        intent.putExtra(START_PATH, ROOT_DIRECTORY);
         startActivity(intent);
 
         Log.d(DOWNLOAD_MANAGER, " activity was send to : " + FileExplorerActivity.class);
@@ -176,36 +176,36 @@ public class BrowserActivity extends Activity {
 
     /*Activities start*/
     private void startPlayerActivity() {
-        Intent intent = new Intent(this, Mp3playerActivity.class);
+        Intent intent = new Intent(this, PlayerActivity.class);
         startActivity(intent);
 
-        Log.d(DOWNLOAD_MANAGER, " player start : " + FileExplorerActivity.class);
+        Log.d(DOWNLOAD_MANAGER, " player start : " + AlertExplorerActivity.class);
     }
 
 
     private void saveWebPageInitiateActivity() {
-        Intent intent = new Intent(this, FileExplorerActivity.class);
+        Intent intent = new Intent(this, AlertExplorerActivity.class);
         intent.putExtra(ACTION_NAME, "save");
         startActivityForResult(intent, REQUEST_SAVE_WEB_PAGE);
 
-        Log.d(DOWNLOAD_MANAGER, " activity was send to : " + FileExplorerActivity.class);
+        Log.d(DOWNLOAD_MANAGER, " activity was send to : " + AlertExplorerActivity.class);
     }
 
     /* e.g: file:///data/data/com.example.issoft.Browser/files/bash.im .html */
     private void loadWebPageFromStorageInitiateActivity() {
-        Intent intent = new Intent(this, FileExplorerActivity.class);
+        Intent intent = new Intent(this, AlertExplorerActivity.class);
         intent.putExtra(ACTION_NAME, "load");
         startActivityForResult(intent, REQUEST_LOAD_WEB_PAGE);
 
-        Log.d(DOWNLOAD_MANAGER, " activity was send to : " + FileExplorerActivity.class);
+        Log.d(DOWNLOAD_MANAGER, " activity was send to : " + AlertExplorerActivity.class);
     }
 
     private void saveFileInitiateActivity() {
-        Intent intent = new Intent(this, FileExplorerActivity.class);
+        Intent intent = new Intent(this, AlertExplorerActivity.class);
         intent.putExtra(ACTION_NAME, "save");
         startActivityForResult(intent, REQUEST_SAVE_FILE);
 
-        Log.d(DOWNLOAD_MANAGER, " activity was send to : " + FileExplorerActivity.class);
+        Log.d(DOWNLOAD_MANAGER, " activity was send to : " + AlertExplorerActivity.class);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
