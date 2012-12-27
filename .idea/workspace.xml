@@ -25,9 +25,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7c179a3-bddc-4920-9922-b596aaca2d87" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Browser.iws" />
@@ -39,7 +38,7 @@
     <file path="/main.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354785687495" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/android/lib/android.jar!/org/jetbrains/android/android.xsd" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354783754551" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354788098956" ignored="false" />
-    <file path="/Dummy.txt" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356603508230" ignored="false" />
+    <file path="/Dummy.txt" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356613600426" ignored="false" />
     <file path="/main_menu.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356521089725" ignored="false" />
     <file path="/FilesTools.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1355477527774" ignored="false" />
     <file path="/ViewTools.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354531919823" ignored="false" />
@@ -48,7 +47,7 @@
     <file path="/a.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354094136797" ignored="false" />
     <file path="/sample.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354094135355" ignored="false" />
     <file path="/Constants.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356602497934" ignored="false" />
-    <file path="/FileExplorerActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356610481458" ignored="false" />
+    <file path="/FileExplorerActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356614365138" ignored="false" />
     <file path="/DownloadFile.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354782448425" ignored="false" />
     <file path="/DownloadService.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354789705629" ignored="false" />
     <file path="/DownloadFileTask.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1355476724788" ignored="false" />
@@ -127,12 +126,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FileExplorerActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FileExplorerActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="24" selection-start="2131" selection-end="2131" vertical-scroll-proportion="0.76988983">
+            <state line="93" column="42" selection-start="2969" selection-end="2969" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#2189#2197#0" expanded="true" />
+                <element signature="e#2094#2102#0" expanded="true" />
+                <element signature="e#2449#2780#0" expanded="true" />
+                <element signature="e#2769#2770#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AlertExplorerActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="215" column="45" selection-start="8336" selection-end="8336" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#701#709#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerActivity.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="300" column="14" selection-start="10647" selection-end="10647" vertical-scroll-proportion="0.3320965">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BrowserActivity.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="217" column="16" selection-start="7785" selection-end="7872" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="class#MyWebViewClient#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#onCreate#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#initViews#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#onCreateOptionsMenu#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#onOptionsItemSelected#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#startFileManager#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#startPlayerActivity#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#saveWebPageInitiateActivity#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#loadWebPageFromStorageInitiateActivity#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#saveFileInitiateActivity#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#goToURL#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#createProgressDialog#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#createNotificationDialog#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#setWindows1251Encoding#0;class#BrowserActivity#0" expanded="false" />
+                <element signature="method#onCreateDialog#0;class#BrowserActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -162,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Mp3playerActivity.java" />
         <option value="$PROJECT_DIR$/res/menu/main_menu.xml" />
         <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java" />
         <option value="$PROJECT_DIR$/res/values-v14/styles.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/activity_main.xml" />
@@ -171,9 +217,10 @@
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/values-v11/styles.xml" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Util/Constants.java" />
-        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java" />
       </list>
     </option>
   </component>
@@ -296,6 +343,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -348,17 +396,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/android-support-v4.jar!/" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD_3.7" />
@@ -419,6 +466,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -444,19 +504,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -607,7 +654,11 @@
       <created>1356603517651</created>
       <updated>1356603517651</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="File explorer&#10;Just a little beat more">
+      <created>1356611448913</created>
+      <updated>1356611448913</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -632,11 +683,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6702254" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53736657" sideWeight="0.4886548" order="3" side_tool="false" content_ui="tabs" />
@@ -645,11 +695,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4365362" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52075917" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32977462" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.39976275" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22852512" sideWeight="0.55516016" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22852512" sideWeight="0.6702254" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44483986" sideWeight="0.47730955" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1096" height="800" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.73784107" order="3" side_tool="false" content_ui="tabs" />
@@ -657,6 +707,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.73784107" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6702254" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289941" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -699,7 +750,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="File explorer&#10;Work nice, but need handle long clock" />
+    <option name="LAST_COMMIT_MESSAGE" value="File explorer&#10;Just a little beat more" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -720,6 +771,7 @@
     <MESSAGE value="not" />
     <MESSAGE value="Empty directory problem resolved" />
     <MESSAGE value="File explorer&#10;Work nice, but need handle long clock" />
+    <MESSAGE value="File explorer&#10;Just a little beat more" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -753,9 +805,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/file_explorer_widget.xml">
@@ -791,58 +841,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/menu/main_menu.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="45" selection-start="592" selection-end="592" vertical-scroll-proportion="0.45777234">
-          <folding />
-        </state>
+        <state line="22" column="45" selection-start="592" selection-end="592" vertical-scroll-proportion="0.45777234" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="60" selection-start="1645" selection-end="1645" vertical-scroll-proportion="0.72827417">
-          <folding />
-        </state>
+        <state line="35" column="60" selection-start="1645" selection-end="1645" vertical-scroll-proportion="0.72827417" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values-v14/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="54" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0624235">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="63" selection-start="6480" selection-end="6495" vertical-scroll-proportion="0.10526316">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#701#709#0" expanded="true" />
-            <element signature="e#8921#8922#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="335" column="50" selection-start="13285" selection-end="13285" vertical-scroll-proportion="2.0995026">
-          <folding>
-            <element signature="class#MyWebViewClient#0;class#BrowserActivity#0" expanded="false" />
-            <element signature="method#onCreate#0;class#BrowserActivity#0" expanded="false" />
-            <element signature="method#initViews#0;class#BrowserActivity#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#BrowserActivity#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#BrowserActivity#0" expanded="false" />
-            <element signature="method#startFileManager#0;class#BrowserActivity#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#BrowserActivity#0" expanded="false" />
-            <element signature="method#createProgressDialog#0;class#BrowserActivity#0" expanded="false" />
-            <element signature="method#createNotificationDialog#0;class#BrowserActivity#0" expanded="false" />
-            <element signature="method#setWindows1251Encoding#0;class#BrowserActivity#0" expanded="false" />
-            <element signature="method#onCreateDialog#0;class#BrowserActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="35" selection-start="4096" selection-end="4096" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -854,12 +863,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="217" column="16" selection-start="7785" selection-end="7872" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="class#MyWebViewClient#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#initViews#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#startFileManager#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#startPlayerActivity#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#saveWebPageInitiateActivity#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#loadWebPageFromStorageInitiateActivity#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#saveFileInitiateActivity#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#goToURL#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#createProgressDialog#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#createNotificationDialog#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#setWindows1251Encoding#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#onCreateDialog#0;class#BrowserActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="24" selection-start="2131" selection-end="2131" vertical-scroll-proportion="0.76988983">
+        <state line="93" column="42" selection-start="2969" selection-end="2969" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#2189#2197#0" expanded="true" />
+            <element signature="e#2094#2102#0" expanded="true" />
+            <element signature="e#2449#2780#0" expanded="true" />
+            <element signature="e#2769#2770#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="215" column="45" selection-start="8336" selection-end="8336" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#701#709#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="300" column="14" selection-start="10647" selection-end="10647" vertical-scroll-proportion="0.3320965">
+          <folding />
         </state>
       </provider>
     </entry>

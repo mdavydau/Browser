@@ -137,7 +137,6 @@ public class AlertExplorerActivity extends Activity {
                 }
             };
         } catch (NullPointerException e) {
-            /*TODO: if files not exist need show UP button*/
             Toast.makeText(getApplicationContext(), "There is no files in this directory.", Toast.LENGTH_LONG).show();
             Log.e(FILE_EXPLORER, "exception:" + e + AlertExplorerActivity.class);
         }
@@ -214,8 +213,7 @@ public class AlertExplorerActivity extends Activity {
                             Log.d(FILE_EXPLORER, path.getAbsolutePath());
 
                         }
-                        /*TODO: Open file
-                        * File or Save picked
+                        /*File or Save picked
                         * here i make activity is file open*/
                         else {
                             Intent resultData = new Intent();

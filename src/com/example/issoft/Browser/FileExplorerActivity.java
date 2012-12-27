@@ -1,21 +1,18 @@
 package com.example.issoft.Browser;
 
+import android.app.AlertDialog;
+import android.app.ListActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
+import android.widget.*;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Environment;
-import android.app.AlertDialog;
-import android.app.ListActivity;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import static com.example.issoft.Browser.Util.Constants.*;
+import static com.example.issoft.Browser.Util.Constants.START_PATH;
 
 /**
  * User: nikitadavydov
@@ -75,6 +72,20 @@ public class FileExplorerActivity extends ListActivity {
 
         ArrayAdapter<String> fileList = new ArrayAdapter<String>(this, R.layout.row, item);
         setListAdapter(fileList);
+
+        /*Handle onItemLongClickListener
+        * TODO: additional stuff
+        * 1. create alert dialog
+        * 2. create list with (copy, move, delete, rename)
+        * */
+        this.getListView().setLongClickable(true);
+        this.getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            public boolean onItemLongClick(AdapterView<?> parent, View v, int position, long id) {
+                //Do some
+                Toast.makeText(getApplicationContext(), "This is very good news.", Toast.LENGTH_LONG).show();
+                return true;
+            }
+        });
     }
 
     @Override
@@ -92,6 +103,7 @@ public class FileExplorerActivity extends ListActivity {
                         .setPositiveButton("OK", null).show();
             }
         } else {
+            /*TODO: Make launcher to picked programs*/
             new AlertDialog.Builder(this)
                     .setIcon(R.drawable.ic_launcher)
                     .setTitle("[" + file.getName() + "]")
