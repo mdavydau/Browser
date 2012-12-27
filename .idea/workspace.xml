@@ -24,30 +24,10 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7c179a3-bddc-4920-9922-b596aaca2d87" name="Default" comment="Empty directory problem resolved">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-hdpi/ic_action_search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/ic_action_search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-xhdpi/ic_action_search.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-hdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-ldpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-mdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-xhdpi/ic_launcher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/dimens.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values-large/dimens.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/file_explorer_widget.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/menu/file_explorer_widget.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/row.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/styles.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values-v11/styles.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values-v14/styles.xml" />
-      <change type="MOVED" beforePath="C:\Users\nikitadavydov\Documents\GitHub\Browser\src\com\example\issoft\Browser\FileExplorerActivity.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java" />
-      <change type="MOVED" beforePath="C:\Users\nikitadavydov\Documents\GitHub\Browser\src\com\example\issoft\Browser\Mp3playerActivity.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+    <list default="true" id="a7c179a3-bddc-4920-9922-b596aaca2d87" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/Util/Constants.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/Util/Constants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Browser.iws" />
@@ -59,7 +39,7 @@
     <file path="/main.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354785687495" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/android/lib/android.jar!/org/jetbrains/android/android.xsd" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354783754551" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354788098956" ignored="false" />
-    <file path="/Dummy.txt" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356601537243" ignored="false" />
+    <file path="/Dummy.txt" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356603508230" ignored="false" />
     <file path="/main_menu.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356521089725" ignored="false" />
     <file path="/FilesTools.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1355477527774" ignored="false" />
     <file path="/ViewTools.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354531919823" ignored="false" />
@@ -68,7 +48,7 @@
     <file path="/a.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354094136797" ignored="false" />
     <file path="/sample.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354094135355" ignored="false" />
     <file path="/Constants.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356602497934" ignored="false" />
-    <file path="/FileExplorerActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356603308683" ignored="false" />
+    <file path="/FileExplorerActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356610481458" ignored="false" />
     <file path="/DownloadFile.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354782448425" ignored="false" />
     <file path="/DownloadService.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354789705629" ignored="false" />
     <file path="/DownloadFileTask.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1355476724788" ignored="false" />
@@ -83,6 +63,7 @@
     <file path="/styles.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356602005813" ignored="false" />
     <file path="/file_explorer_widget.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356601229951" ignored="false" />
     <file path="$PROJECT_DIR$/gen/com/example/issoft/Browser/R.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356601956907" ignored="false" />
+    <file path="/PlayerActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1356611138718" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,40 +130,10 @@
       <file leaf-file-name="FileExplorerActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="22" selection-start="2205" selection-end="2219" vertical-scroll-proportion="1.0416157">
+            <state line="73" column="24" selection-start="2131" selection-end="2131" vertical-scroll-proportion="0.76988983">
               <folding>
-                <element signature="e#2161#2169#0" expanded="true" />
+                <element signature="e#2189#2197#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BrowserActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="169" column="50" selection-start="5819" selection-end="5819" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlertExplorerActivity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="40" selection-start="1197" selection-end="1222" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#701#709#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Util/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="55" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -207,7 +158,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Tasks/DownloadFileTask.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Util/PlayerTools.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Mp3playerActivity.java" />
         <option value="$PROJECT_DIR$/res/menu/main_menu.xml" />
@@ -221,8 +171,9 @@
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/values-v11/styles.xml" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Util/Constants.java" />
-        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java" />
+        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java" />
       </list>
     </option>
   </component>
@@ -652,7 +603,11 @@
       <created>1356530103090</created>
       <updated>1356530103090</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="File explorer&#10;Work nice, but need handle long clock">
+      <created>1356603517651</created>
+      <updated>1356603517651</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -677,7 +632,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -694,7 +649,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.39976275" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22852512" sideWeight="0.55516016" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22852512" sideWeight="0.55516016" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44483986" sideWeight="0.47730955" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1096" height="800" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.73784107" order="3" side_tool="false" content_ui="tabs" />
@@ -744,7 +699,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Empty directory problem resolved" />
+    <option name="LAST_COMMIT_MESSAGE" value="File explorer&#10;Work nice, but need handle long clock" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -764,6 +719,7 @@
     <MESSAGE value="Null problem" />
     <MESSAGE value="not" />
     <MESSAGE value="Empty directory problem resolved" />
+    <MESSAGE value="File explorer&#10;Work nice, but need handle long clock" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -854,6 +810,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="175" column="63" selection-start="6480" selection-end="6495" vertical-scroll-proportion="0.10526316">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#701#709#0" expanded="true" />
+            <element signature="e#8921#8922#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="335" column="50" selection-start="13285" selection-end="13285" vertical-scroll-proportion="2.0995026">
+          <folding>
+            <element signature="class#MyWebViewClient#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#onCreate#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#initViews#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#startFileManager#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#onActivityResult#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#createProgressDialog#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#createNotificationDialog#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#setWindows1251Encoding#0;class#BrowserActivity#0" expanded="false" />
+            <element signature="method#onCreateDialog#0;class#BrowserActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="35" selection-start="4096" selection-end="4096" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Util/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="55" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.0">
@@ -861,28 +854,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="40" selection-start="1197" selection-end="1222" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#701#709#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="50" selection-start="5819" selection-end="5819" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="22" selection-start="2205" selection-end="2219" vertical-scroll-proportion="1.0416157">
+        <state line="73" column="24" selection-start="2131" selection-end="2131" vertical-scroll-proportion="0.76988983">
           <folding>
-            <element signature="e#2161#2169#0" expanded="true" />
+            <element signature="e#2189#2197#0" expanded="true" />
           </folding>
         </state>
       </provider>

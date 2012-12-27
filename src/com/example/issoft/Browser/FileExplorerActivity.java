@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static com.example.issoft.Browser.Util.Constants.*;
 
@@ -41,7 +42,6 @@ public class FileExplorerActivity extends ListActivity {
         if (resultData.getStringExtra(START_PATH) != null) root = resultData.getStringExtra(START_PATH);
         /*or start from disk space*/
         else root = Environment.getRootDirectory().getPath();
-
 
         getDir(root);
     }

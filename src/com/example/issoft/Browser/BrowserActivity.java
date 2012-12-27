@@ -52,10 +52,10 @@ public class BrowserActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        initViews();
+    }
 
-        /*TODO: Create initView
-        * from here*/
-
+    private void initViews() {
         Button goButton = (Button) findViewById(R.id.go);
         final ImageButton backButton = (ImageButton) findViewById(R.id.back);
         final ImageButton nextButton = (ImageButton) findViewById(R.id.next);
@@ -130,8 +130,6 @@ public class BrowserActivity extends Activity {
                 saveFileInitiateActivity();
             }
         });
-
-        /*to here*/
     }
 
     /*Menu creator*/
@@ -181,7 +179,6 @@ public class BrowserActivity extends Activity {
 
         Log.d(DOWNLOAD_MANAGER, " player start : " + AlertExplorerActivity.class);
     }
-
 
     private void saveWebPageInitiateActivity() {
         Intent intent = new Intent(this, AlertExplorerActivity.class);

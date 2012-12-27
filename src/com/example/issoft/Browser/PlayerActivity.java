@@ -123,6 +123,7 @@ public class PlayerActivity extends Activity {
     private void createEmptyPlayList() {
         ContentValues cv = new ContentValues();
         cv.put(MediaStore.Audio.Playlists.NAME, "New playlist");
+        /*Create in external memory*/
         Uri uri = getContentResolver().insert(MediaStore.Audio.Playlists.getContentUri("external"), cv);
     }
 
