@@ -1,10 +1,8 @@
 package com.example.issoft.Browser;
 
 import android.app.Activity;
-import android.content.ContentValues;
 import android.database.Cursor;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
@@ -22,15 +20,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
-import java.util.Vector;
 
 /**
  * User: nikitadavydov
  * Date: 12/17/12
  */
 public class PlayerActivity extends Activity {
-    private Button buttonPlayStop;
+    private Button buttonPlayPause;
 
     private SeekBar seekBar;
     private ListView listView;
@@ -50,10 +46,42 @@ public class PlayerActivity extends Activity {
         initViews();
     }
 
+    public void onPause() {
+        super.onPause();
+
+        setPlayerOnPause();
+
+        makeToastText("onPause");
+    }
+
+    public void onStop() {
+        super.onStop();
+        Toast.makeText(this, "onStop", Toast.LENGTH_LONG).show();
+    }
+
+    public void onRestart() {
+        super.onRestart();
+
+        setPlayerOnStart();
+
+        Toast.makeText(this, "onRestart, work, after stop/pause, before onResume", Toast.LENGTH_LONG).show();
+    }
+
+    public void onResume() {
+        super.onResume();
+        Toast.makeText(this, "onResume, work when start", Toast.LENGTH_LONG).show();
+    }
+
+    public void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this, "onDestroy", Toast.LENGTH_LONG).show();
+        mediaPlayer.reset();
+    }
+
     // This method set the setOnClickListener and method for it (buttonClick())
     private void initViews() {
-        buttonPlayStop = (Button) findViewById(R.id.ButtonPlayStop);
-        buttonPlayStop.setOnClickListener(new View.OnClickListener() {
+        buttonPlayPause = (Button) findViewById(R.id.ButtonPlayStop);
+        buttonPlayPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 buttonClick();
@@ -80,8 +108,15 @@ public class PlayerActivity extends Activity {
         buttonCreateNewPlayList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: need implement!
-                createEmptyPlayList();
+                createNewPlayList();
+            }
+        });
+
+        Button buttonOpenPlayList = (Button) findViewById(R.id.openPlayList);
+        buttonOpenPlayList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonOpenPlayList();
             }
         });
 
@@ -102,8 +137,9 @@ public class PlayerActivity extends Activity {
             }
         });
 
-        //TODO: Hardcode here
-        setDataSourceAndPrepare(null);
+        /*TODO: Hardcode here (AVD)
+        * i send Constants.DIAMONDS here because need activate player with song*/
+//        setDataSourceAndPrepare(Constants.DIAMONDS);
 
         listView = (ListView) findViewById(R.id.listView);
         scanPlayList();
@@ -120,11 +156,12 @@ public class PlayerActivity extends Activity {
         });
     }
 
-    private void createEmptyPlayList() {
-        ContentValues cv = new ContentValues();
-        cv.put(MediaStore.Audio.Playlists.NAME, "New playlist");
-        /*Create in external memory*/
-        Uri uri = getContentResolver().insert(MediaStore.Audio.Playlists.getContentUri("external"), cv);
+    private void buttonOpenPlayList() {
+        Toast.makeText(this, "Open play list i make i little beat late.", Toast.LENGTH_LONG).show();
+    }
+
+    private void createNewPlayList() {
+        Toast.makeText(this, "New play list creator i make i little beat late.", Toast.LENGTH_LONG).show();
     }
 
     /*if we are click on track - need delete elements
@@ -135,6 +172,9 @@ public class PlayerActivity extends Activity {
                 trackList.remove(currentPosition + 1);
             } catch (ArrayIndexOutOfBoundsException e) {
                 Toast.makeText(this, "List is empty", Toast.LENGTH_LONG).show();
+                break;
+            } catch (IndexOutOfBoundsException e) {
+                Toast.makeText(this, "There is no more tracks", Toast.LENGTH_LONG).show();
                 break;
             }
         }
@@ -177,9 +217,6 @@ public class PlayerActivity extends Activity {
     }
 
     private void setDataSourceAndPrepare(String path) {
-        //TODO: Hardcode here change to " "
-        if (path == null) path = "/data/data/com.example.issoft.Browser/files/rihanna_-_diamonds_(zaycev.net).mp3";
-        //end
         try {
             //i don't really know about mediaPlayer.reset() but i think need to do this
             mediaPlayer.reset();
@@ -209,6 +246,7 @@ public class PlayerActivity extends Activity {
     public void startPlayProgressUpdater() {
         seekBar.setProgress(mediaPlayer.getCurrentPosition());
         if (mediaPlayer.isPlaying()) {
+            setPlayerOnStart();
             Runnable notification = new Runnable() {
                 public void run() {
                     startPlayProgressUpdater();
@@ -216,22 +254,33 @@ public class PlayerActivity extends Activity {
             };
             handler.postDelayed(notification, 1000);
         } else {
-            mediaPlayer.pause();
-            buttonPlayStop.setText(getString(R.string.play_str));
+            setPlayerOnPause();
         }
     }
 
-    // This is event handler thumb moving event
+    private void setPlayerOnPause() {
+        mediaPlayer.pause();
+        buttonPlayPause.setText(getString(R.string.play_str));
+    }
+
+    /*If i need here this:
+    * mediaPlayer.start();*/
+    private void setPlayerOnStart() {
+        mediaPlayer.start();
+        buttonPlayPause.setText(getString(R.string.pause_str));
+    }
+
+    /*This is event handler thumb moving event*/
     private void seekChange(View v) {
         /*i don't need isPlaying here*/
         SeekBar sb = (SeekBar) v;
         mediaPlayer.seekTo(sb.getProgress());
     }
 
-    // This is event handler for buttonClick event
+    /*This is event handler for buttonClick event*/
     private void buttonClick() {
-        if (buttonPlayStop.getText() == getString(R.string.play_str)) {
-            buttonPlayStop.setText(getString(R.string.pause_str));
+        if (buttonPlayPause.getText() == getString(R.string.play_str)) {
+            buttonPlayPause.setText(getString(R.string.pause_str));
             try {
                 mediaPlayer.start();
                 startPlayProgressUpdater();
@@ -239,7 +288,7 @@ public class PlayerActivity extends Activity {
                 mediaPlayer.pause();
             }
         } else {
-            buttonPlayStop.setText(getString(R.string.play_str));
+            buttonPlayPause.setText(getString(R.string.play_str));
             mediaPlayer.pause();
         }
     }
@@ -250,7 +299,7 @@ public class PlayerActivity extends Activity {
         * Third parameter - ID of the TextView to which the data is written
         * Forth - the Array of data*/
         createPlayListWithAllMusicOnDevice();
-        Vector<String> tracks = copyTrackToList();
+        List<String> tracks = copyTrackToList();
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, tracks);
         listView.setAdapter(adapter);
@@ -275,14 +324,14 @@ public class PlayerActivity extends Activity {
                 projection, selection, null, null, 0);
     }
 
-    private Vector<String> copyTrackToList() {
-        Vector<String> paths = new Vector<String>();
+    private List<String> copyTrackToList() {
+        List<String> paths = new LinkedList<String>();
         if (musicListSDCardCursor != null) {
             for (int i = 0; i < musicListSDCardCursor.getCount(); i++) {
                 musicListSDCardCursor.moveToPosition(i);
                 String p = musicListSDCardCursor.getString(1);
                 if (p.endsWith("mp3"))
-                    paths.addElement(p);
+                    paths.add(p);
             }
             musicListSDCardCursor.close();
         }
@@ -292,38 +341,24 @@ public class PlayerActivity extends Activity {
                 musicListInternalMemoryCursor.moveToPosition(i);
                 String p = musicListInternalMemoryCursor.getString(1);
                 if (p.endsWith("mp3"))
-                    paths.addElement(p);
+                    paths.add(p);
             }
             musicListInternalMemoryCursor.close();
         }
 
         if (paths.isEmpty()) {
-            //TODO: Hardcode
-            paths.addElement(Constants.DIAMONDS);
-            paths.addElement(Constants.SKYFALL);
+            //TODO: Hardcode (AVD)
+            paths.add(Constants.DIAMONDS);
+            paths.add(Constants.SKYFALL);
             //end
-            Toast.makeText(this, "no media found", Toast.LENGTH_LONG).show();
+
+            makeToastText("no media found");
             return paths;
         }
-
         return paths;
     }
 
-    private void randomizeElements(Vector<String> paths) {
-        Random r = new Random();
-        int pos = r.nextInt(paths.size() - 1);
-        if (paths.size() == 1) pos = 0;
-
-        String url = paths.elementAt(pos);
-
-        if (url.length() == 0) return;
-
-        Toast.makeText(this, url, Toast.LENGTH_LONG).show();
-
-        try {
-            setDataSourceAndPrepare(url);
-        } catch (Exception e) {
-            Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-        }
+    private void makeToastText(String str) {
+        Toast.makeText(this, str, Toast.LENGTH_LONG).show();
     }
 }
