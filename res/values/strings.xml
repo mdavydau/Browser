@@ -34,4 +34,5 @@
     <string name="fileManager">Open file manager</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="googleMap">Map</string>
 </resources>

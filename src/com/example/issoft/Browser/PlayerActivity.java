@@ -138,7 +138,9 @@ public class PlayerActivity extends Activity {
         });
 
         /*TODO: Hardcode here (AVD)
-        * i send Constants.DIAMONDS here because need activate player with song*/
+        * i send Constants.DIAMONDS here because need activate player with song
+        *
+        * here i can play song from some other activity*/
 //        setDataSourceAndPrepare(Constants.DIAMONDS);
 
         listView = (ListView) findViewById(R.id.listView);

@@ -8,7 +8,7 @@
         android:id="@+id/load"
         android:title="@string/loadPage"/>
 
-    <group android:id="@+id/loadList" />
+    <group android:id="@+id/loadList"/>
 
     <item
         android:id="@+id/exit"
@@ -21,4 +21,8 @@
     <item
         android:id="@+id/file_manager"
         android:title="@string/fileManager"/>
+
+    <item
+        android:id="@+id/google_map"
+        android:title="@string/googleMap"/>
 </menu>

@@ -12,6 +12,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.*;
 import android.widget.*;
+
 import com.example.issoft.Browser.Tasks.DownloadFileTask;
 import com.example.issoft.Browser.Util.FilesTools;
 import com.example.issoft.Browser.Util.ViewTools;
@@ -159,8 +160,18 @@ public class BrowserActivity extends Activity {
             case R.id.file_manager:
                 startFileManager();
                 return true;
+            case R.id.google_map:
+                startMap();
+                return true;
         }
         return false;
+    }
+
+    private void startMap() {
+        Intent intent = new Intent(this, BrowserMapActivity.class);
+        startActivity(intent);
+
+        Log.d(DOWNLOAD_MANAGER, " map start : " + BrowserMapActivity.class);
     }
 
     private void startFileManager() {
