@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Browser.iml" filepath="$PROJECT_DIR$/Browser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module/google-play-services_lib/google-play-services_lib.iml" filepath="$PROJECT_DIR$/module/google-play-services_lib/google-play-services_lib.iml" />
     </modules>
   </component>
 </project>

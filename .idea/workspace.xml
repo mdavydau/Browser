@@ -5,6 +5,7 @@
       <profile>
         <option name="device" value="2.7in QVGA" />
         <option name="deviceConfiguration" value="Portrait" />
+        <option name="localeLanguage" value="en" />
         <option name="targetHashString" value="android-8" />
         <option name="theme" value="Theme.Black" />
       </profile>
@@ -25,22 +26,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7c179a3-bddc-4920-9922-b596aaca2d87" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/maps.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/GoogleMaps/.idea/ant.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/google-play-services_lib/google-play-services_lib.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/GoogleMaps/.idea/libraries/libs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/GoogleMaps/.idea/libraries/maps.xml" />
+      <change type="DELETED" beforePath="C:\Users\nikitadavydov\Documents\GitHub\Browser\.idea\libraries\android_support_v4.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Browser.iml" afterPath="$PROJECT_DIR$/Browser.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/map_widget.xml" afterPath="$PROJECT_DIR$/res/layout/map_widget.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/maps.xml" afterPath="$PROJECT_DIR$/.idea/libraries/maps.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Browser.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357733444666" ignored="false" />
-    <file path="/BrowserActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357735372128" ignored="false" />
+    <file path="/BrowserActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357739590333" ignored="false" />
     <file path="/a.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354094106439" ignored="false" />
     <file path="/strings.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1355315155180" ignored="false" />
     <file path="/main.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354785687495" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/android/lib/android.jar!/org/jetbrains/android/android.xsd" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354783754551" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357737808094" ignored="false" />
-    <file path="/Dummy.txt" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357736560417" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357738748591" ignored="false" />
+    <file path="/Dummy.txt" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357810627513" ignored="false" />
     <file path="/main_menu.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357733048603" ignored="false" />
     <file path="/FilesTools.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1355477527774" ignored="false" />
     <file path="/ViewTools.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354531919823" ignored="false" />
@@ -67,7 +77,7 @@
     <file path="/map_widget.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357738357625" ignored="false" />
     <file path="/MapActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357731965101" ignored="false" />
     <file path="/GoogleMapActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357732893614" ignored="false" />
-    <file path="/BrowserMapActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357738428400" ignored="false" />
+    <file path="/BrowserMapActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357742309698" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +92,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -117,22 +126,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java" line="170" class="com.example.issoft.Browser.BrowserActivity" package="com.example.issoft.Browser">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -148,7 +143,7 @@
       <file leaf-file-name="map_widget.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/map_widget.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="24" selection-start="159" selection-end="159" vertical-scroll-proportion="-2.04">
+            <state line="3" column="24" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -166,19 +161,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrowserActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BrowserActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="170" column="0" selection-start="5765" selection-end="5765" vertical-scroll-proportion="0.78403753">
+            <state line="163" column="0" selection-start="5639" selection-end="5639" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrowserMapActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BrowserMapActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="53" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0">
+            <state line="28" column="23" selection-start="757" selection-end="757" vertical-scroll-proportion="0.5811966">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -189,7 +184,7 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0">
+            <state line="36" column="62" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -226,11 +221,11 @@
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/MapActivity.java" />
         <option value="$PROJECT_DIR$/res/menu/main_menu.xml" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/GoogleMapActivity.java" />
-        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/map_widget.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -352,6 +347,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -359,10 +356,6 @@
               <option name="myItemId" value="Browser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -371,56 +364,22 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Browser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Browser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="OverrideImplement.combined" value="false" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="false" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/maps.jar!/" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/module/google-play-services_lib/libs" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD_3.7" />
     <property name="AndroidTargetDevices" value="emulator-5556" />
@@ -434,7 +393,7 @@
     <property name="options.lastSelected" value="appearance" />
     <property name="AndroidLayoutSelectedEditor" value="text-editor" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5556" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="options.searchVisible" value="true" />
@@ -480,19 +439,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -518,6 +464,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -684,7 +643,11 @@
       <created>1357736566848</created>
       <updated>1357736566848</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Google Map still not working&#10;">
+      <created>1357738638599</created>
+      <updated>1357738638599</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -713,28 +676,28 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6702254" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7010676" sideWeight="0.4821718" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58244365" sideWeight="0.5121556" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49228945" sideWeight="0.4789303" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49228945" sideWeight="0.5153971" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4365362" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52075917" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959481" sideWeight="0.39976275" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22852512" sideWeight="0.29893237" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22852512" sideWeight="0.5077106" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53499407" sideWeight="0.47730955" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1096" height="800" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.73784107" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.73784107" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6702254" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4365362" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -776,7 +739,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Google Map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Google Map still not working&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -801,6 +764,7 @@
     <MESSAGE value="File explorer&#10;Long click is pretty good work now" />
     <MESSAGE value="File explorer&#10;onStart/Pause/Restart" />
     <MESSAGE value="Google Map" />
+    <MESSAGE value="Google Map still not working&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -814,14 +778,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/file_explorer_widget.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="30" selection-start="741" selection-end="741" vertical-scroll-proportion="0.46303502" />
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/values-v11/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="4" selection-start="88" selection-end="142" vertical-scroll-proportion="0.06407035" />
@@ -839,16 +795,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Util/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="55" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="24" column="55" selection-start="1133" selection-end="1133" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/AlertExplorerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="45" selection-start="8336" selection-end="8336" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="215" column="45" selection-start="8336" selection-end="8336" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
@@ -861,16 +813,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/PlayerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="55" selection-start="4335" selection-end="4335" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="142" column="55" selection-start="4335" selection-end="4335" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/row.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
       <provider editor-type-id="android-designer">
         <state />
@@ -878,9 +826,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/FileExplorerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="10" selection-start="2216" selection-end="2216" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="76" column="10" selection-start="2216" selection-end="2216" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/menu/main_menu.xml">
@@ -892,30 +838,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="66" selection-start="1712" selection-end="1712" vertical-scroll-proportion="0.87184465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="802" selection-end="802" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="53" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="36" column="66" selection-start="1712" selection-end="1712" vertical-scroll-proportion="0.87184465" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/map_widget.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="24" selection-start="159" selection-end="159" vertical-scroll-proportion="-2.04">
+        <state line="3" column="24" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -923,10 +851,31 @@
         <state />
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files (x86)/Android/android-sdk/platforms/android-8/android.jar!/java/lang/reflect/Method.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="2049" selection-end="2049" vertical-scroll-proportion="0.7377892" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="62" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="0" selection-start="5765" selection-end="5765" vertical-scroll-proportion="0.78403753">
+        <state line="163" column="0" selection-start="5639" selection-end="5639" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="23" selection-start="757" selection-end="757" vertical-scroll-proportion="0.5811966">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,6 +1,5 @@
 package com.example.issoft.Browser;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.google.android.maps.GeoPoint;

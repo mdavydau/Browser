@@ -6,6 +6,7 @@
       <directory url="file://$PROJECT_DIR$/gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/untitled1/target/generated-sources/annotations" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/untitled1/target/generated-test-sources/test-annotations" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/module/google-play-services_lib/gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions />
     <wildcardResourcePatterns>
