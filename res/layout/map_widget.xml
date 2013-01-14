@@ -44,7 +44,7 @@
               map:mapType="normal"
               map:uiCompass="true"
               map:uiRotateGestures="true"
-              map:uiScrollGestures="false"
+              map:uiScrollGestures="true"
               map:uiTiltGestures="true"
               map:uiZoomControls="true"
               map:uiZoomGestures="true"/>
