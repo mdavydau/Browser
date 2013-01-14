@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-          android:id="@+id/map"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          class="com.google.android.gms.maps.MapFragment"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:layout_gravity="right|center_vertical">
+
+        <AutoCompleteTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/TypeLocationHere"
+            android:id="@+id/cityAutoCompleteLocation"
+            android:inputType="textAutoComplete"
+            android:layout_gravity="center|left"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/SaveLocationButton"
+            android:id="@+id/saveLocationButton"
+            android:layout_gravity="center|left"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:map="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/map"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              class="com.google.android.gms.maps.SupportMapFragment"
+              map:cameraBearing="112.5"
+              map:cameraTargetLat="53.9"
+              map:cameraTargetLng="27.566667"
+              map:cameraTilt="30"
+              map:cameraZoom="13"
+              map:mapType="normal"
+              map:uiCompass="true"
+              map:uiRotateGestures="true"
+              map:uiScrollGestures="false"
+              map:uiTiltGestures="true"
+              map:uiZoomControls="true"
+              map:uiZoomGestures="true"/>
+</LinearLayout>

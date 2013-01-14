@@ -36,4 +36,10 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="mapskey">AIzaSyCjYrkzqBStbsLmrs9kEI6exLRqZt8zkn0</string>
     <string name="googleMap">Map</string>
+    <string name="TypeLocationHere">Type location here...</string>
+    <string name="SaveLocationButton">Save</string>
+    <string-array name="city_array">
+        <item>MINSK</item>
+        <item>NOVOPOLOTSK</item>
+    </string-array>
 </resources>

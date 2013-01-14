@@ -40,6 +40,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="maps" level="project" />
     <orderEntry type="module" module-name="google-play-services_lib" exported="" />
+    <orderEntry type="library" exported="" name="libs" level="project" />
   </component>
 </module>
 
