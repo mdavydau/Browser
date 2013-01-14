@@ -92,9 +92,7 @@ public class BrowserMapActivity extends FragmentActivity {
         String[] countries = getResources().getStringArray(R.array.city_array);
 
         // Create the adapter and set it to the AutoCompleteTextView
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item, countries);
-        adapter.setNotifyOnChange(true);
-        textView.setAdapter(adapter);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.list_item);
 
         textView.addTextChangedListener(new TextWatcher() {
             @Override
@@ -109,9 +107,13 @@ public class BrowserMapActivity extends FragmentActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                geoCoder(editable.toString());
+                if (editable.toString().length() > 1)
+                adapter.add(geoCoder(editable.toString()).get(0).getFeatureName());
             }
         });
+
+        adapter.setNotifyOnChange(true);
+        textView.setAdapter(adapter);
 
         textView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
