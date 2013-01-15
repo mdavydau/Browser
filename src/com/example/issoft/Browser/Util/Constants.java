@@ -1,5 +1,7 @@
 package com.example.issoft.Browser.Util;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class Constants {
     //prefix & postfix
     public static final String FILE_PREFIX = "file://";
@@ -38,4 +40,7 @@ public class Constants {
     //music
     public static final String DIAMONDS = "/data/data/com.example.issoft.Browser/files/rihanna_-_diamonds_(zaycev.net).mp3";
     public static final String SKYFALL = "/data/data/com.example.issoft.Browser/files/adele_-_skyfall_(zaycev.net).mp3";
+
+    //map
+    public static final LatLng MINSK = new LatLng(53.9, 27.566667);
 }
