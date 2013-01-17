@@ -8,7 +8,12 @@ import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.*;
+import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.Toast;
+import com.example.issoft.Browser.Util.CustomAddress;
+import com.example.issoft.Browser.Util.CustomAddressArrayAdapter;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -31,11 +36,10 @@ public class BrowserMapActivity extends FragmentActivity {
     private GoogleMap mMap;
     private AutoCompleteTextView textView;
     private Button saveButton;
-    private ArrayAdapter<String> adapter;
+    private CustomAddressArrayAdapter<CustomAddress> customAddressArrayAdapter;
 
-    private ArrayList<Address> addressList = new ArrayList<Address>();
+    private ArrayList<CustomAddress> customAddressArrayList = new ArrayList<CustomAddress>();
     private final Handler handler = new Handler();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +84,7 @@ public class BrowserMapActivity extends FragmentActivity {
 
     private void initAutoComplete() {
         textView = (AutoCompleteTextView) findViewById(R.id.cityAutoCompleteLocation);
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        customAddressArrayAdapter = new CustomAddressArrayAdapter<CustomAddress>(this, android.R.layout.simple_list_item_1, customAddressArrayList);
         textView.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -95,29 +99,27 @@ public class BrowserMapActivity extends FragmentActivity {
             public void afterTextChanged(Editable editable) {
                 if (editable.toString().length() > 2) {
                     geoCoder(editable.toString());
+                    setAdapter();
                 }
             }
         });
 
-        adapter.setNotifyOnChange(true);
-        textView.setAdapter(adapter);
+        textView.setAdapter(customAddressArrayAdapter);
 
         textView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                String address = (String) adapterView.getItemAtPosition(position);
-
-                String[] splitEditText = address.split(",");
-
-                LatLng currentLatLng = new LatLng(Double.parseDouble(splitEditText[2]), Double.parseDouble(splitEditText[3]));
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(currentLatLng));
-                setMarker(currentLatLng, splitEditText[0], splitEditText[1]);
-
-                makeToast(address);
+                CustomAddress customAddress = (CustomAddress) adapterView.getItemAtPosition(position);
+                textView.setText(customAddress.getAddress().getCountryName());
+                makeToast(customAddress.getAddress().getFeatureName());
             }
         });
     }
 
+    private void setAdapter() {
+        customAddressArrayAdapter = new CustomAddressArrayAdapter<CustomAddress>(this, android.R.layout.simple_list_item_1, customAddressArrayList);
+        textView.setAdapter(customAddressArrayAdapter);
+    }
 
     private void geoCoder(final String locationName) {
         final Geocoder geoCoder = new Geocoder(this, Locale.getDefault());
@@ -127,14 +129,14 @@ public class BrowserMapActivity extends FragmentActivity {
                 List<Address> addresses;
                 try {
                     addresses = geoCoder.getFromLocationName(locationName, 5);
+
                     if (addresses.size() > 0) {
-                        addressList.clear();
-                        adapter.clear();
+                        customAddressArrayList.clear();
                         for (Address address : addresses) {
-                            addressList.add(address);
-                            adapter.add(address.getFeatureName() + ", " + address.getCountryName() + ", " + address.getLatitude() + ", " + address.getLongitude());
+                            CustomAddress customAddress = new CustomAddress(address);
+                            customAddressArrayList.add(customAddress);
                         }
-                        adapter.notifyDataSetChanged();
+                        customAddressArrayAdapter.notifyDataSetChanged();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
