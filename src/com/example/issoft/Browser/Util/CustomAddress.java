@@ -15,11 +15,7 @@ public class CustomAddress extends Address {
         return address;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
     public String toString() {
-        return this.getCountryName();
+        return address.getFeatureName() + ", " + address.getCountryName();
     }
 }

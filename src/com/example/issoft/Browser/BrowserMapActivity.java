@@ -49,7 +49,7 @@ public class BrowserMapActivity extends FragmentActivity {
         initViews();
         initAutoComplete();
 
-        setMarker(MINSK, "Minsk", "");
+        makeMarker(MINSK, "Minsk", "");
     }
 
     private void makeToast(String text) {
@@ -63,13 +63,11 @@ public class BrowserMapActivity extends FragmentActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LatLng currentLatLng = new LatLng(mMap.getMyLocation().getLatitude(), mMap.getMyLocation().getLongitude());
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(currentLatLng));
             }
         });
     }
 
-    private void setMarker(LatLng position, String title, String snippet) {
+    private void makeMarker(LatLng position, String title, String snippet) {
         if (snippet != null) {
             mMap.addMarker(new MarkerOptions()
                     .position(position)
@@ -84,7 +82,9 @@ public class BrowserMapActivity extends FragmentActivity {
 
     private void initAutoComplete() {
         textView = (AutoCompleteTextView) findViewById(R.id.cityAutoCompleteLocation);
-        customAddressArrayAdapter = new CustomAddressArrayAdapter<CustomAddress>(this, android.R.layout.simple_list_item_1, customAddressArrayList);
+
+        setAdapter();
+
         textView.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -104,13 +104,15 @@ public class BrowserMapActivity extends FragmentActivity {
             }
         });
 
-        textView.setAdapter(customAddressArrayAdapter);
-
         textView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 CustomAddress customAddress = (CustomAddress) adapterView.getItemAtPosition(position);
-                textView.setText(customAddress.getAddress().getCountryName());
+
+                goToCurrentPosition(customAddress.getAddress());
+
+                textView.setText(customAddress.getAddress().getFeatureName() + ", " + customAddress.getAddress().getCountryName());
+
                 makeToast(customAddress.getAddress().getFeatureName());
             }
         });
@@ -119,6 +121,13 @@ public class BrowserMapActivity extends FragmentActivity {
     private void setAdapter() {
         customAddressArrayAdapter = new CustomAddressArrayAdapter<CustomAddress>(this, android.R.layout.simple_list_item_1, customAddressArrayList);
         textView.setAdapter(customAddressArrayAdapter);
+    }
+
+    private void goToCurrentPosition(Address address) {
+        LatLng currentLatLng = new LatLng(address.getLatitude(), address.getLongitude());
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(currentLatLng));
+
+        makeMarker(currentLatLng, address.getFeatureName(), address.getCountryName());
     }
 
     private void geoCoder(final String locationName) {
