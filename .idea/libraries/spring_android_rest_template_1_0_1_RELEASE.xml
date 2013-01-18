@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="spring-android-rest-template-1.0.1.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring-android-rest-template-1.0.1.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

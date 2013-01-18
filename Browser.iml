@@ -41,6 +41,9 @@
     <orderEntry type="library" exported="" name="maps" level="project" />
     <orderEntry type="module" module-name="google-play-services_lib" exported="" />
     <orderEntry type="library" exported="" name="libs" level="project" />
+    <orderEntry type="library" name="spring-android-rest-template-1.0.1.RELEASE" level="project" />
+    <orderEntry type="library" name="spring-android-auth-1.0.1.RELEASE" level="project" />
+    <orderEntry type="library" name="spring-android-core-1.0.1.RELEASE" level="project" />
   </component>
 </module>
 

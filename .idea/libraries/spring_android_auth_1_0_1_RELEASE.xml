@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="spring-android-auth-1.0.1.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring-android-auth-1.0.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring-android-core-1.0.1.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
