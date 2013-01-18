@@ -1,5 +1,6 @@
 package com.example.issoft.Browser;
 
+import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -7,11 +8,12 @@ import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AutoCompleteTextView;
-import android.widget.Button;
-import android.widget.Toast;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.*;
 import com.example.issoft.Browser.Util.CustomAddress;
 import com.example.issoft.Browser.Util.CustomAddressArrayAdapter;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -36,9 +38,13 @@ public class BrowserMapActivity extends FragmentActivity {
     private GoogleMap mMap;
     private AutoCompleteTextView textView;
     private Button saveButton;
+    private CustomAddress customAddress;
+
     private CustomAddressArrayAdapter<CustomAddress> customAddressArrayAdapter;
 
+    private List<CustomAddress> menuSavedCustomAddress = new ArrayList<CustomAddress>();
     private ArrayList<CustomAddress> customAddressArrayList = new ArrayList<CustomAddress>();
+
     private final Handler handler = new Handler();
 
     @Override
@@ -52,37 +58,54 @@ public class BrowserMapActivity extends FragmentActivity {
         makeMarker(MINSK, "Minsk", "");
     }
 
-    private void makeToast(String text) {
-        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
-    }
-
     private void initViews() {
         mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map)).getMap();
-        saveButton = (Button) findViewById(R.id.saveLocationButton);
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                hideKeyboardAndRequestFocus();
+            }
+        });
+        mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
+            @Override
+            public void onMapLongClick(LatLng latLng) {
+                //todo: set new pointer
+            }
+        });
 
+        saveButton = (Button) findViewById(R.id.saveLocationButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                saveCurrentLocationToMenu();
             }
         });
     }
 
-    private void makeMarker(LatLng position, String title, String snippet) {
-        if (snippet != null) {
-            mMap.addMarker(new MarkerOptions()
-                    .position(position)
-                    .title(title)
-                    .snippet(snippet));
-        } else {
-            mMap.addMarker(new MarkerOptions()
-                    .position(position)
-                    .title(title));
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.map_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.openSavedLocations:
+                //todo: alert dialog with locations
+                return true;
         }
+        return false;
+    }
+
+    private void saveCurrentLocationToMenu() {
+        //todo: before close program - save this stuff to DB
+        if (!menuSavedCustomAddress.contains(customAddress)) menuSavedCustomAddress.add(customAddress);
     }
 
     private void initAutoComplete() {
         textView = (AutoCompleteTextView) findViewById(R.id.cityAutoCompleteLocation);
-
         setAdapter();
 
         textView.addTextChangedListener(new TextWatcher() {
@@ -107,19 +130,33 @@ public class BrowserMapActivity extends FragmentActivity {
         textView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                CustomAddress customAddress = (CustomAddress) adapterView.getItemAtPosition(position);
-
+                customAddress = (CustomAddress) adapterView.getItemAtPosition(position);
                 goToCurrentPosition(customAddress.getAddress());
-
                 textView.setText(customAddress.getAddress().getFeatureName() + ", " + customAddress.getAddress().getCountryName());
-
-                makeToast(customAddress.getAddress().getFeatureName());
+                hideKeyboardAndRequestFocus();
             }
         });
     }
 
+    private void makeMarker(LatLng position, String title, String snippet) {
+        if (snippet != null) {
+            mMap.addMarker(new MarkerOptions()
+                    .position(position)
+                    .title(title)
+                    .snippet(snippet));
+        } else {
+            mMap.addMarker(new MarkerOptions()
+                    .position(position)
+                    .title(title));
+        }
+    }
+
+    private void makeToast(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+    }
+
     private void setAdapter() {
-        customAddressArrayAdapter = new CustomAddressArrayAdapter<CustomAddress>(this, android.R.layout.simple_list_item_1, customAddressArrayList);
+        customAddressArrayAdapter = new CustomAddressArrayAdapter<CustomAddress>(this, R.layout.list_item, customAddressArrayList);
         textView.setAdapter(customAddressArrayAdapter);
     }
 
@@ -127,7 +164,7 @@ public class BrowserMapActivity extends FragmentActivity {
         LatLng currentLatLng = new LatLng(address.getLatitude(), address.getLongitude());
         mMap.animateCamera(CameraUpdateFactory.newLatLng(currentLatLng));
 
-        makeMarker(currentLatLng, address.getFeatureName(), address.getCountryName());
+        makeMarker(currentLatLng, address.getFeatureName(), address.getCountryName() + "\n" + "(" + address.getLatitude() + address.getLongitude() + ")");
     }
 
     private void geoCoder(final String locationName) {
@@ -153,5 +190,11 @@ public class BrowserMapActivity extends FragmentActivity {
             }
         };
         handler.postDelayed(runnable, 1000);
+    }
+
+    private void hideKeyboardAndRequestFocus() {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(textView.getWindowToken(), 0);
+        saveButton.requestFocus();
     }
 }

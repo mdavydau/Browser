@@ -26,7 +26,8 @@
             android:text="@string/SaveLocationButton"
             android:id="@+id/saveLocationButton"
             android:layout_gravity="center|left"
-            android:layout_weight="4"/>
+            android:layout_weight="4"
+            android:focusableInTouchMode="true"/>
 
     </LinearLayout>
 

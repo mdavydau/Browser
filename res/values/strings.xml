@@ -38,6 +38,8 @@
     <string name="googleMap">Map</string>
     <string name="TypeLocationHere">Type location here...</string>
     <string name="SaveLocationButton">Save</string>
+    <string name="openSavedLocations">Open location</string>
+    <string name="changeMapView">Change view</string>
     <string-array name="city_array">
         <item>MINSK</item>
         <item>NOVOPOLOTSK</item>
