@@ -17,13 +17,6 @@ public class Country {
         this._additional = _additional;
     }
 
-    public Country(int _id, String _name, double _latitude, double _longitude) {
-        this._id = _id;
-        this._name = _name;
-        this._latitude = _latitude;
-        this._longitude = _longitude;
-    }
-
     public Country(int _id, String _name, double _latitude, double _longitude, String _additional) {
         this._id = _id;
         this._name = _name;

@@ -73,7 +73,7 @@ public class BrowserMapActivity extends FragmentActivity {
     private CustomAddressArrayAdapter<CustomAddress> customAddressArrayAdapter;
 
     private List<Country> countries;
-    private List<CustomAddress> menuSavedCustomAddress = new ArrayList<CustomAddress>();
+    //    private List<CustomAddress> menuSavedCustomAddress = new ArrayList<CustomAddress>();
     private ArrayList<CustomAddress> customAddressArrayList = new ArrayList<CustomAddress>();
 
     private final Handler handler = new Handler();
@@ -171,6 +171,7 @@ public class BrowserMapActivity extends FragmentActivity {
                     public void onClick(DialogInterface dialog, int item) {
                         String[] splitCountries = countryItems[item].split(",");
                         Country country = db.getCountry(Integer.parseInt(splitCountries[2].trim()));
+                        goToCurrentPosition(country);
                         makeToast(country.get_latitude() + ", " + country.get_longitude());
                     }
                 });
@@ -292,6 +293,13 @@ public class BrowserMapActivity extends FragmentActivity {
         makeMarker(currentLatLng, address.getFeatureName(), address.getCountryName() + " (" + address.getLatitude() + ", " + address.getLongitude() + ")");
     }
 
+    private void goToCurrentPosition(Country country) {
+        LatLng currentLatLng = new LatLng(country.get_latitude(), country.get_longitude());
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(currentLatLng));
+
+        makeMarker(currentLatLng, country.get_name(), " (" + country.get_latitude() + ", " + country.get_longitude() + ")");
+    }
+
     private void geoCoder(final String locationName) {
         final Geocoder geoCoder = new Geocoder(this, Locale.getDefault());
         Runnable runnable = new Runnable() {
@@ -379,7 +387,6 @@ public class BrowserMapActivity extends FragmentActivity {
         sBuf.append("&sensor=true&mode=");
         sBuf.append(MODE);
         parser = new GoogleParser(sBuf.toString());
-        Route r = parser.parse();
-        return r;
+        return parser.parse();
     }
 }
