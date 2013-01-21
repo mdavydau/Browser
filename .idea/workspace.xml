@@ -24,19 +24,24 @@
       </GlobalState>
     </option>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="DEBUG" />
+  </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java" line="219" mnemonic="9" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="a7c179a3-bddc-4920-9922-b596aaca2d87" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/GoogleParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Parser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Route.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/RouteOverlay.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Segment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/XMLParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/spring_android_auth_1_0_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/spring_android_core_1_0_1_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/spring_android_rest_template_1_0_1_RELEASE.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Browser.iml" afterPath="$PROJECT_DIR$/Browser.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/db/Country.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/db/DatabaseHandler.java" />
+      <change type="DELETED" beforePath="C:\Users\nikitadavydov\Documents\GitHub\Browser\src\com\example\issoft\Browser\Route\RouteOverlay.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/GoogleParser.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/GoogleParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Route.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Route.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Segment.java" afterPath="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Segment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/menu/map_menu.xml" afterPath="$PROJECT_DIR$/res/menu/map_menu.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/nikitadavydov.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/nikitadavydov.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Browser.iws" />
@@ -48,7 +53,7 @@
     <file path="/main.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354785687495" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/plugins/android/lib/android.jar!/org/jetbrains/android/android.xsd" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354783754551" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357738748591" ignored="false" />
-    <file path="/Dummy.txt" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358509958746" ignored="false" />
+    <file path="/Dummy.txt" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358754992988" ignored="false" />
     <file path="/main_menu.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357733048603" ignored="false" />
     <file path="/FilesTools.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1355477527774" ignored="false" />
     <file path="/ViewTools.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1354531919823" ignored="false" />
@@ -75,13 +80,18 @@
     <file path="/map_widget.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358429594706" ignored="false" />
     <file path="/MapActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357731965101" ignored="false" />
     <file path="/GoogleMapActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1357732893614" ignored="false" />
-    <file path="/BrowserMapActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358521681577" ignored="false" />
+    <file path="/BrowserMapActivity.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358772892666" ignored="false" />
     <file path="/CustomArrayAdapter.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358419330725" ignored="false" />
     <file path="/CustomAddressArrayAdapter.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358423261407" ignored="false" />
     <file path="/CustomAddress.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358427875261" ignored="false" />
     <file path="/list_item.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358428713572" ignored="false" />
-    <file path="/map_menu.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358434312734" ignored="false" />
+    <file path="/map_menu.xml" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358771262684" ignored="false" />
     <file path="/Road.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358516110442" ignored="false" />
+    <file path="/GoogleParser.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358759300711" ignored="false" />
+    <file path="/Segment.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358756651899" ignored="false" />
+    <file path="/Route.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358756694416" ignored="false" />
+    <file path="/Country.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358769178646" ignored="false" />
+    <file path="/DatabaseHandler.java" changelist="a7c179a3-bddc-4920-9922-b596aaca2d87" time="1358772985732" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,23 +140,8 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java" line="350" class="com.example.issoft.Browser.BrowserMapActivity" package="com.example.issoft.Browser">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -159,85 +154,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BrowserMapActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BrowserMapActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="349" column="29" selection-start="13811" selection-end="13811" vertical-scroll-proportion="0.0">
+            <state line="222" column="188" selection-start="8343" selection-end="8343" vertical-scroll-proportion="0.46768895">
               <folding>
-                <element signature="e#2658#2673#0" expanded="true" />
-                <element signature="e#2752#2767#0" expanded="true" />
-                <element signature="e#4110#4548#0" expanded="true" />
-                <element signature="e#4537#4538#0" expanded="true" />
-                <element signature="e#5528#6001#0" expanded="true" />
-                <element signature="e#5982#5983#0" expanded="true" />
-                <element signature="e#6289#6622#0" expanded="true" />
-                <element signature="e#6603#6604#0" expanded="true" />
-                <element signature="e#6908#7241#0" expanded="true" />
-                <element signature="e#7222#7223#0" expanded="true" />
-                <element signature="e#11736#12606#0" expanded="true" />
-                <element signature="e#12595#12596#0" expanded="true" />
+                <element signature="e#4126#4440#0" expanded="true" />
+                <element signature="e#4429#4430#0" expanded="true" />
+                <element signature="e#4551#5072#0" expanded="true" />
+                <element signature="e#5061#5062#0" expanded="true" />
+                <element signature="e#5420#6210#0" expanded="true" />
+                <element signature="e#6191#6192#0" expanded="true" />
+                <element signature="e#6524#6983#0" expanded="true" />
+                <element signature="e#6964#6965#0" expanded="true" />
+                <element signature="e#13658#13980#0" expanded="true" />
+                <element signature="e#13969#13970#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Route.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Route.java">
+      <file leaf-file-name="map_menu.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/menu/map_menu.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
+            <state line="10" column="36" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Parser.java">
+      <file leaf-file-name="Country.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/db/Country.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="17" selection-start="134" selection-end="134" vertical-scroll-proportion="0.2982456">
+            <state line="17" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XMLParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/XMLParser.java">
+      <file leaf-file-name="DatabaseHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/db/DatabaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="18" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
+            <state line="142" column="11" selection-start="5220" selection-end="5220" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3189#3198#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GoogleParser.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/GoogleParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="26" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#5236#5246#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RouteOverlay.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/RouteOverlay.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="13" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Segment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Segment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="18" selection-start="483" selection-end="490" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -262,21 +224,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Util/CustomArrayAdapter.java" />
-        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Util/CustomAddressArrayAdapter.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Util/CustomAddress.java" />
         <option value="$PROJECT_DIR$/res/layout/list_item.xml" />
         <option value="$PROJECT_DIR$/res/layout/map_widget.xml" />
         <option value="$PROJECT_DIR$/res/menu/file_explorer_widget.xml" />
-        <option value="$PROJECT_DIR$/res/menu/map_menu.xml" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Util/Road.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Parser.java" />
-        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Route.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/XMLParcer.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/XMLParser.java" />
-        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/GoogleParser.java" />
-        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/RouteOverlay.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Segment.java" />
+        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Route.java" />
+        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/RouteOverlay.java" />
+        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/Route/GoogleParser.java" />
+        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/db/Country.java" />
+        <option value="$PROJECT_DIR$/res/menu/map_menu.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/db/DatabaseHandler.java" />
         <option value="$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java" />
       </list>
     </option>
@@ -404,6 +366,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -463,7 +426,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Route" />
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -519,17 +482,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/spring-android-core-1.0.1.RELEASE.jar!/" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="AVD_3.7" />
@@ -590,6 +552,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -615,19 +590,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -834,7 +796,11 @@
       <created>1358496288681</created>
       <updated>1358496288681</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="parser problems">
+      <created>1358521797842</created>
+      <updated>1358521797842</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="1">
@@ -863,10 +829,10 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32858837" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6702254" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5473908" sideWeight="0.4746137" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5292865" sideWeight="0.4746137" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37699682" sideWeight="0.5215232" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977462" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -876,7 +842,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.119757175" sideWeight="0.2428115" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.119757175" sideWeight="0.45260915" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.119757175" sideWeight="0.47071353" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5346113" sideWeight="0.47730955" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1096" height="800" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294702" sideWeight="0.49627262" order="3" side_tool="false" content_ui="tabs" />
@@ -884,7 +850,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294702" sideWeight="0.49627262" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6702254" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -926,7 +892,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu to Map" />
+    <option name="LAST_COMMIT_MESSAGE" value="parser problems" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -960,6 +926,7 @@
     <MESSAGE value="ArrayAdapter still now working" />
     <MESSAGE value="setAdapter" />
     <MESSAGE value="Menu to Map" />
+    <MESSAGE value="parser problems" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -973,44 +940,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="194" column="50" selection-start="6615" selection-end="6615" vertical-scroll-proportion="0.35158816">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/menu/file_explorer_widget.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="195" selection-end="195" vertical-scroll-proportion="0.07447974">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/menu/main_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="40" selection-end="691" vertical-scroll-proportion="0.03723987">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/map_widget.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="47" selection-start="1223" selection-end="1223" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/menu/map_menu.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Util/CustomAddress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="232" selection-end="232" vertical-scroll-proportion="0.18619934">
@@ -1025,86 +954,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files (x86)/Android/android-sdk/platforms/android-8/android.jar!/android/app/Activity.class">
+    <entry file="jar://$PROJECT_DIR$/module/google-play-services_lib/libs/google-play-services.jar!/com/google/android/gms/maps/model/PolylineOptions.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="22" selection-start="8020" selection-end="8020" vertical-scroll-proportion="0.33333334">
+        <state line="16" column="11" selection-start="563" selection-end="563" vertical-scroll-proportion="0.35466668">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="17" selection-start="134" selection-end="134" vertical-scroll-proportion="0.13033953">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Segment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Route.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="24" selection-start="757" selection-end="757" vertical-scroll-proportion="-0.21029572">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/GoogleParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="34" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#5271#5279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/XMLParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="18" selection-start="722" selection-end="722" vertical-scroll-proportion="0.6181818">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Android/android-sdk/platforms/android-8/android.jar!/java/lang/ClassLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="30" selection-start="2357" selection-end="2357" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Android/android-sdk/platforms/android-8/android.jar!/android/util/Log.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="22" selection-start="1678" selection-end="1678" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files (x86)/Android/android-sdk/platforms/android-8/android.jar!/android/app/Instrumentation.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="16" selection-start="6187" selection-end="6187" vertical-scroll-proportion="0.18777777">
+        <state line="116" column="16" selection-start="6187" selection-end="6187" vertical-scroll-proportion="0.3325062">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/XMLParser.java">
+    <entry file="jar://C:/Program Files (x86)/Android/android-sdk/platforms/android-8/android.jar!/android/app/Activity.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="18" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/GoogleParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="26" selection-start="754" selection-end="754" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5236#5246#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/RouteOverlay.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="396" selection-end="396" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Segment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="18" selection-start="483" selection-end="490" vertical-scroll-proportion="0.0">
+        <state line="245" column="16" selection-start="11435" selection-end="11435" vertical-scroll-proportion="0.3325062">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Route.java">
+    <entry file="file://$PROJECT_DIR$/res/menu/map_menu.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="150" selection-end="150" vertical-scroll-proportion="0.0">
+        <state line="10" column="36" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/db/Country.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/db/DatabaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="11" selection-start="5220" selection-end="5220" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3189#3198#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/BrowserMapActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="349" column="29" selection-start="13811" selection-end="13811" vertical-scroll-proportion="0.0">
+        <state line="222" column="188" selection-start="8343" selection-end="8343" vertical-scroll-proportion="0.46768895">
           <folding>
-            <element signature="e#2658#2673#0" expanded="true" />
-            <element signature="e#2752#2767#0" expanded="true" />
-            <element signature="e#4110#4548#0" expanded="true" />
-            <element signature="e#4537#4538#0" expanded="true" />
-            <element signature="e#5528#6001#0" expanded="true" />
-            <element signature="e#5982#5983#0" expanded="true" />
-            <element signature="e#6289#6622#0" expanded="true" />
-            <element signature="e#6603#6604#0" expanded="true" />
-            <element signature="e#6908#7241#0" expanded="true" />
-            <element signature="e#7222#7223#0" expanded="true" />
-            <element signature="e#11736#12606#0" expanded="true" />
-            <element signature="e#12595#12596#0" expanded="true" />
+            <element signature="e#4126#4440#0" expanded="true" />
+            <element signature="e#4429#4430#0" expanded="true" />
+            <element signature="e#4551#5072#0" expanded="true" />
+            <element signature="e#5061#5062#0" expanded="true" />
+            <element signature="e#5420#6210#0" expanded="true" />
+            <element signature="e#6191#6192#0" expanded="true" />
+            <element signature="e#6524#6983#0" expanded="true" />
+            <element signature="e#6964#6965#0" expanded="true" />
+            <element signature="e#13658#13980#0" expanded="true" />
+            <element signature="e#13969#13970#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/issoft/Browser/Route/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="17" selection-start="134" selection-end="134" vertical-scroll-proportion="0.2982456">
-          <folding />
         </state>
       </provider>
     </entry>

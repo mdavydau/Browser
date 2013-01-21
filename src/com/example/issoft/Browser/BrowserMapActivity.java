@@ -26,18 +26,14 @@ import android.widget.Toast;
 import com.example.issoft.Browser.Route.GoogleParser;
 import com.example.issoft.Browser.Route.Parser;
 import com.example.issoft.Browser.Route.Route;
-import com.example.issoft.Browser.Route.RouteOverlay;
 import com.example.issoft.Browser.Util.CustomAddress;
 import com.example.issoft.Browser.Util.CustomAddressArrayAdapter;
+import com.example.issoft.Browser.db.Country;
+import com.example.issoft.Browser.db.DatabaseHandler;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
-import com.google.android.maps.GeoPoint;
+import com.google.android.gms.maps.model.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -54,12 +50,15 @@ public class BrowserMapActivity extends FragmentActivity {
 
     private static final String BROWSER_MAP_ACTIVITY = BrowserMapActivity.class.getName();
     private static final String CURRENT_LOCATION = "CURRENT_LOCATION";
+    private static final String MODE = "driving";
     private final int CHOOSE_POINT_DIALOG = 0;
-    private final int START_POINT_DIALOG = 1;
-    private final int END_POINT_DIALOG = 2;
+    private final int LOAD_ALL_SAVED_COUNTRIES = 1;
 
     private GoogleMap mMap;
-    private GoogleMapOptions googleMapOptions;
+    private Polyline polyline;
+    private Marker markerStart;
+    private Marker markerFinish;
+
     private AutoCompleteTextView textView;
     private Button saveButton;
     private CustomAddress currentCustomAddress;
@@ -69,8 +68,11 @@ public class BrowserMapActivity extends FragmentActivity {
     private LatLng finishLatlng;
     private LatLng currentLatlng;
 
+    private DatabaseHandler db;
+
     private CustomAddressArrayAdapter<CustomAddress> customAddressArrayAdapter;
 
+    private List<Country> countries;
     private List<CustomAddress> menuSavedCustomAddress = new ArrayList<CustomAddress>();
     private ArrayList<CustomAddress> customAddressArrayList = new ArrayList<CustomAddress>();
 
@@ -81,6 +83,7 @@ public class BrowserMapActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.map_widget);
 
+        db = new DatabaseHandler(this);
         initViews();
         initAutoComplete();
         makeMarker(MINSK, "Minsk", "");
@@ -101,7 +104,10 @@ public class BrowserMapActivity extends FragmentActivity {
         } catch (ArrayIndexOutOfBoundsException e) {
             Log.e(BROWSER_MAP_ACTIVITY, e.toString());
         }
+    }
 
+    protected void onPause() {
+        super.onPause();
     }
 
     private void initViews() {
@@ -116,9 +122,7 @@ public class BrowserMapActivity extends FragmentActivity {
             @Override
             public void onMapLongClick(LatLng latLng) {
                 currentLatlng = latLng;
-
-                if (finishLatlng == null || startLatlng == null) showDialog(CHOOSE_POINT_DIALOG);
-                if (finishLatlng != null && startLatlng != null) route();
+                showDialog(CHOOSE_POINT_DIALOG);
                 makeToast("lat:" + latLng.latitude + " lng: " + latLng.longitude);
             }
         });
@@ -148,35 +152,26 @@ public class BrowserMapActivity extends FragmentActivity {
                     public void onClick(DialogInterface dialog, int item) {
                         if (dialogItems[item].equals("Start point")) {
                             startLatlng = currentLatlng;
+                            if (polyline != null) clearAllRoutes();
+                            markerStart = makeMarker(startLatlng, "Start", "");
                         } else if (dialogItems[item].equals("End point")) {
                             finishLatlng = currentLatlng;
+                            if (startLatlng != null && finishLatlng != null) route();
+                            markerFinish = makeMarker(finishLatlng, "Finish", "");
                         }
                     }
                 });
                 return builder.create();
-            case START_POINT_DIALOG:
-                final String[] start = {"Start point"};
+            case LOAD_ALL_SAVED_COUNTRIES:
+                final String[] countryItems = getAllSavedCountries();
                 builder = new AlertDialog.Builder(this);
-                builder.setTitle("Add route points");
-                builder.setItems(start, new DialogInterface.OnClickListener() {
+                builder.setTitle("Saved locations");
+                builder.setItems(countryItems, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int item) {
-                        if (start[item].equals("Start point")) {
-                            startLatlng = currentLatlng;
-                        }
-                    }
-                });
-                return builder.create();
-            case END_POINT_DIALOG:
-                final String[] finish = {"End point"};
-                builder = new AlertDialog.Builder(this);
-                builder.setTitle("Add route points");
-                builder.setItems(finish, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int item) {
-                        if (finish[item].equals("End point")) {
-                            finishLatlng = currentLatlng;
-                        }
+                        String[] splitCountries = countryItems[item].split(",");
+                        Country country = db.getCountry(Integer.parseInt(splitCountries[2].trim()));
+                        makeToast(country.get_latitude() + ", " + country.get_longitude());
                     }
                 });
                 return builder.create();
@@ -196,15 +191,41 @@ public class BrowserMapActivity extends FragmentActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.openSavedLocations:
-                //todo: alert dialog with locations
+                showDialog(LOAD_ALL_SAVED_COUNTRIES);
                 return true;
+            case R.id.clearAllRoutes:
+                clearAllRoutes();
+                return true;
+            case R.id.saveCurrentLocation:
+                saveCurrentLocationToMenu();
         }
         return false;
     }
 
+    private String[] getAllSavedCountries() {
+        countries = db.getAllCountries();
+        String[] countriesArray = new String[countries.size()];
+        int i = 0;
+
+        for (Country cn : countries) {
+            countriesArray[i] = cn.get_name() + ", " + cn.get_id();
+            i++;
+        }
+        return countriesArray;
+    }
+
+    private void clearAllRoutes() {
+        if (polyline != null) polyline.remove();
+        if (markerStart != null) markerStart.remove();
+        if (markerFinish != null) markerFinish.remove();
+    }
+
     private void saveCurrentLocationToMenu() {
-        //todo: before close program - save this stuff to DB
-        if (!menuSavedCustomAddress.contains(currentCustomAddress)) menuSavedCustomAddress.add(currentCustomAddress);
+        db.addCountry(new Country(
+                currentCustomAddress.getAddress().getFeatureName() + ", " + currentCustomAddress.getAddress().getCountryName(),
+                currentCustomAddress.getAddress().getLatitude(),
+                currentCustomAddress.getAddress().getLongitude(),
+                ""));
     }
 
     private void initAutoComplete() {
@@ -212,7 +233,6 @@ public class BrowserMapActivity extends FragmentActivity {
         setAdapter();
 
         textView.addTextChangedListener(new TextWatcher() {
-
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
             }
@@ -241,17 +261,19 @@ public class BrowserMapActivity extends FragmentActivity {
         });
     }
 
-    private void makeMarker(LatLng position, String title, String snippet) {
+    private Marker makeMarker(LatLng position, String title, String snippet) {
+        Marker marker;
         if (snippet != null) {
-            mMap.addMarker(new MarkerOptions()
+            marker = mMap.addMarker(new MarkerOptions()
                     .position(position)
                     .title(title)
                     .snippet(snippet));
         } else {
-            mMap.addMarker(new MarkerOptions()
+            marker = mMap.addMarker(new MarkerOptions()
                     .position(position)
                     .title(title));
         }
+        return marker;
     }
 
     private void makeToast(String text) {
@@ -328,8 +350,17 @@ public class BrowserMapActivity extends FragmentActivity {
     }
 
     private void route() {
-        Route route = directions(startLatlng, finishLatlng);
-        RouteOverlay routeOverlay = new RouteOverlay(route, Color.BLUE);
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                polyline = mMap.addPolyline(new PolylineOptions()
+                        .addAll(directions(startLatlng, finishLatlng).getPoints())
+                        .width(5)
+                        .color(Color.BLUE));
+            }
+        };
+        handler.postDelayed(runnable, 1000);
+
     }
 
     private Route directions(final LatLng start, final LatLng dest) {
@@ -345,7 +376,8 @@ public class BrowserMapActivity extends FragmentActivity {
         sBuf.append(dest.latitude);
         sBuf.append(',');
         sBuf.append(dest.longitude);
-        sBuf.append("&sensor=true&mode=driving");
+        sBuf.append("&sensor=true&mode=");
+        sBuf.append(MODE);
         parser = new GoogleParser(sBuf.toString());
         Route r = parser.parse();
         return r;

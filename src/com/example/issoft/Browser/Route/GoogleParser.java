@@ -1,6 +1,7 @@
 package com.example.issoft.Browser.Route;
 
 import android.util.Log;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.maps.GeoPoint;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -66,8 +67,7 @@ public class GoogleParser extends XMLParser implements Parser {
                 final JSONObject step = steps.getJSONObject(i);
                 //Get the start position for this step and set it on the segment
                 final JSONObject start = step.getJSONObject("start_location");
-                final GeoPoint position = new GeoPoint((int) (start.getDouble("lat") * 1E6),
-                        (int) (start.getDouble("lng") * 1E6));
+                final LatLng position = new LatLng((start.getDouble("lat")), start.getDouble("lng"));
                 segment.setPoint(position);
                 //Set the length of this segment in metres
                 final int length = step.getJSONObject("distance").getInt("value");
@@ -77,7 +77,8 @@ public class GoogleParser extends XMLParser implements Parser {
                 //Strip html from google directions and set as turn instruction
                 segment.setInstruction(step.getString("html_instructions").replaceAll("<(.*?)*>", ""));
                 //Retrieve & decode this segment's polyline and add it to the route.
-                route.addPoints(decodePolyLine(step.getJSONObject("polyline").getString("points")));
+//                route.addPoints(decodePolyLine(step.getJSONObject("polyline").getString("points")));
+                route.addPoint(position);
                 //Push a copy of the segment to the route
                 route.addSegment(segment.copy());
             }
@@ -122,10 +123,10 @@ public class GoogleParser extends XMLParser implements Parser {
      * @return the list of GeoPoints represented by this polystring.
      */
 
-    private List<GeoPoint> decodePolyLine(final String poly) {
+    private List<LatLng> decodePolyLine(final String poly) {
         int len = poly.length();
         int index = 0;
-        List<GeoPoint> decoded = new ArrayList<GeoPoint>();
+        List<LatLng> decoded = new ArrayList<LatLng>();
         int lat = 0;
         int lng = 0;
 
@@ -151,8 +152,8 @@ public class GoogleParser extends XMLParser implements Parser {
             int dlng = ((result & 1) != 0 ? ~(result >> 1) : (result >> 1));
             lng += dlng;
 
-            decoded.add(new GeoPoint(
-                    (int) (lat * 1E6 / 1E5), (int) (lng * 1E6 / 1E5)));
+            /*!!!*/
+            decoded.add(new LatLng(lat, lng));
         }
 
         return decoded;

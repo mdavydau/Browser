@@ -40,6 +40,8 @@
     <string name="SaveLocationButton">Save</string>
     <string name="openSavedLocations">Open location</string>
     <string name="changeMapView">Change view</string>
+    <string name="clearAllRoutes">Clear routes</string>
+    <string name="saveCurrentLocation">Save location</string>
     <string-array name="city_array">
         <item>MINSK</item>
         <item>NOVOPOLOTSK</item>

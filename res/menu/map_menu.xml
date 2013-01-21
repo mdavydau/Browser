@@ -4,4 +4,10 @@
     <item
         android:id="@+id/openSavedLocations"
         android:title="@string/openSavedLocations"/>
+    <item
+        android:id="@+id/clearAllRoutes"
+        android:title="@string/clearAllRoutes"/>
+    <item
+        android:id="@+id/saveCurrentLocation"
+        android:title="@string/saveCurrentLocation"/>
 </menu>
