@@ -1,46 +1,3022 @@
 FORMAT: 1A
 
-# test_api
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+# Pixlwise API
 
-# Group Notes
-Notes related resources of the **Notes API**
+## Overview
+Pixlwise Api Documentation
 
-## Notes Collection [/notes]
-### List all Notes [GET]
-+ Response 200 (application/json)
+### Version information
+Version: 1.0
 
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
+### Contact information
+Contact: pixlwise@pixlwise.com
 
-### Create a Note [POST]
-+ Request (application/json)
+### License information
+License: Contact pixlwise.com
+License URL: pixlwise.com/license
 
-        { "title": "Buy cheese and bread for breakfast." }
+Terms of service: pixlwise.com/terms
 
-+ Response 201 (application/json)
+### URI scheme
+BasePath: /fb
 
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+### Tags
 
-## Note [/notes/{id}]
-A single Note object with all its details
+* image: Facebook Images
+* stats: Stats
+* search: Facebook Targeting
+* facebook: Facebook
+* adset: Ad set is a group of ads.
+* page: Page controller.
+* adaccount: User Ad Account
+* ad: An ad object associated it with an ad set.
+* admin: Pixlwise API
+* creative: Creative
+* gallery: Gallery
+* campaign: Campaign is a grouping of ad sets.
 
-+ Parameters
-    + id (required, number, `1`) ... Numeric `id` of the Note to perform action with. Has example value.
 
-### Retrieve a Note [GET]
-+ Response 200 (application/json)
 
-    + Header
 
-            X-My-Header: The Value
+## Paths
+### Create ad
+----
+POST /api/ad/{campaign}/{adset}
+----
 
-    + Body
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|BodyParameter|request|An ad group contains the data necessary for an ad, such as creative elements and campaign information. Each ad group is associated with a campaign and all ad groups in a campaign have the same daily or lifetime budget and schedule.|true|<<CreateAdSo>>|
+|###
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|201||<<AdSo>>
+|###
 
-### Remove a Note [DELETE]
-+ Response 204
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* ad
+
+### Sync user ads
+----
+PUT /api/ad/{campaign}/{adset}/facebook/sync
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSo>> array
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* ad
+
+### Get ads
+----
+GET /api/ad/{campaign}/{adset}/list
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* ad
+
+### Delete ad
+----
+DELETE /api/ad/{campaign}/{adset}/{ad}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|PathParameter|ad|Ad internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|204||No Content
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* ad
+
+### Update ad
+----
+PUT /api/ad/{campaign}/{adset}/{ad}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|PathParameter|ad|Ad internal id|true|string|
+|BodyParameter|request|An ad group contains the data necessary for an ad, such as creative elements and campaign information. Each ad group is associated with a campaign and all ad groups in a campaign have the same daily or lifetime budget and schedule.|true|<<CreateAdSo>>|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* ad
+
+### Get ad
+----
+GET /api/ad/{campaign}/{adset}/{ad}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|PathParameter|ad|Ad internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* ad
+
+### Approve ad and send to facebook
+----
+PUT /api/ad/{campaign}/{adset}/{ad}/facebook
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|PathParameter|ad|Ad internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* ad
+
+### Sync user ad by internal id
+----
+PUT /api/ad/{campaign}/{adset}/{ad}/facebook/sync
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|PathParameter|ad|Ad internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* ad
+
+### Set Creative to Ad
+----
+PUT /api/ad/{campaign}/{adset}/{ad}/{creative}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|PathParameter|ad|Ad internal id|true|string|
+|PathParameter|creative|Creative internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* ad
+
+### Add Facebook user ad account
+----
+PUT /api/adaccount/account
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|fbid|fbid|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdAccountSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adaccount
+
+### Set ad account
+----
+POST /api/adaccount/account
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|adaccount|adaccount|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||No Content
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adaccount
+
+### Get user default ad account
+----
+GET /api/adaccount/account
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdAccountSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adaccount
+
+### Set default user account
+----
+PUT /api/adaccount/account/default
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|adaccount|Ad Account internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdAccountSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adaccount
+
+### Sync user facebook ad accounts
+----
+GET /api/adaccount/account/facebook/sync
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdAccountSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adaccount
+
+### List of user Ad Accounts
+----
+GET /api/adaccount/account/list
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdAccountSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adaccount
+
+### Unlink ad account
+----
+DELETE /api/adaccount/account/{adaccount}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|adaccount|Ad Account internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|204||No Content
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adaccount
+
+### Log in
+----
+GET /api/admin/login
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|email|User email|true|string|
+|QueryParameter|password|User password|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AccountSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* admin
+
+### Create API Markdown documentation
+----
+GET /api/admin/markdown
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||No Content
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* admin
+
+### Create API PDF documentation
+----
+GET /api/admin/pdf
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||No Content
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* admin
+
+### Create new user
+----
+POST /api/admin/signup
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|email|User email|true|string|
+|QueryParameter|password|User password|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|201||<<AccountSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* admin
+
+### Create new adset
+----
+POST /api/adset/{campaign}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|BodyParameter|request|request|true|<<CreateAdSetSo>>|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|201||<<AdSetSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adset
+
+### Sync adset
+----
+PUT /api/adset/{campaign}/facebook/sync
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSetSo>> array
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adset
+
+### Get adset list
+----
+GET /api/adset/{campaign}/list
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSetSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adset
+
+### List noy synced campaigns
+----
+GET /api/adset/{campaign}/sync/list
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSetSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adset
+
+### Delete adset
+----
+DELETE /api/adset/{campaign}/{adset}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|204||No Content
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adset
+
+### Update adset
+----
+PUT /api/adset/{campaign}/{adset}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|BodyParameter|request|An ad set is a group of ads that share the same daily or lifetime budget, schedule, bid type, bid info, and targeting data. Sets enable you to group ads according to your criteria, and you can retrieve the ad-related statistics that apply to a set. The individual ads have separate bids and targeting.|true|<<CreateAdSetSo>>|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSetSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adset
+
+### Get adset by internal id
+----
+GET /api/adset/{campaign}/{adset}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSetSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adset
+
+### Send adset to Facebook
+----
+PUT /api/adset/{campaign}/{adset}/facebook
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSetSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adset
+
+### Sync adset by internal id
+----
+PUT /api/adset/{campaign}/{adset}/facebook/sync
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|AdSet internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<AdSetSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* adset
+
+### Create new campaign
+----
+POST /api/campaign
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|request|With ad campaigns, you can now group ad sets together and retrieve unique statistics across multiple Facebook sets.|true|<<CreateCampaignSo>>|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|201||<<CampaignSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* campaign
+
+### Sync campaigns with Facebook
+----
+PUT /api/campaign/facebook/sync
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<CampaignSo>> array
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* campaign
+
+### Get campaigns list
+----
+GET /api/campaign/list
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<CampaignSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* campaign
+
+### Delete campaign
+----
+DELETE /api/campaign/{campaign}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|204||No Content
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* campaign
+
+### Update campaign
+----
+PUT /api/campaign/{campaign}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|BodyParameter|request|With ad campaigns, you can now group ad sets together and retrieve unique statistics across multiple Facebook sets.|true|<<CreateCampaignSo>>|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<CampaignSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* campaign
+
+### Get campaign
+----
+GET /api/campaign/{campaign}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<CampaignSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* campaign
+
+### Approve campaign and send to Facebook
+----
+PUT /api/campaign/{campaign}/facebook
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<CampaignSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* campaign
+
+### Sync single campaign with Facebook by id
+----
+PUT /api/campaign/{campaign}/facebook/sync
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<CampaignSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* campaign
+
+### Create Creative
+----
+POST /api/creative
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|request|An ad creative object is an instance of a specific creative which is being used to define the creative field of one or more ad groups.|false|<<CreateCreativeSo>>|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|201||<<CreativeSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* creative
+
+### Sync all creatives with Facebook by id
+----
+GET /api/creative/facebook/sync
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<CreativeSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* creative
+
+### Delete by id
+----
+DELETE /api/creative/{creative}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|creative|Creative id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|204||No Content
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* creative
+
+### Update Creative by id
+----
+PUT /api/creative/{creative}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|creative|Creative id|true|string|
+|BodyParameter|request|An ad creative object is an instance of a specific creative which is being used to define the creative field of one or more ad groups.|false|<<CreateCreativeSo>>|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<CreativeSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* creative
+
+### Get Creative by id
+----
+GET /api/creative/{creative}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|creative|Creative id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<CreativeSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* creative
+
+### Approve and send Creative to Facebook
+----
+PUT /api/creative/{creative}/facebook
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|creative|Creative id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<CreativeSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* creative
+
+### Sync single creative with Facebook by id
+----
+GET /api/creative/{creative}/facebook/sync
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|creative|Creative id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<CreativeSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* creative
+
+### Authenticate user with OAuth
+----
+GET /api/facebook/authenticate
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|code|code|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||string
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* facebook
+
+### Claim page to business manager
+----
+POST /api/facebook/claim
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|request|request|true|<<ClaimPageToBusinessManagerRequest>>|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<ClaimResponse>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* facebook
+
+### Get Facebook properties
+----
+GET /api/facebook/data
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<FacebookDataResponseSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* facebook
+
+### Add User permissions
+----
+POST /api/facebook/system/user/permissions
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|request|request|true|<<UserPermissionsRequest>>|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<FacebookResponse>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* facebook
+
+### Update User access token
+----
+PUT /api/facebook/token
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|accessToken|accessToken|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<TokenDataSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* facebook
+
+### Get User access token
+----
+GET /api/facebook/token
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<TokenDataSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* facebook
+
+### Upload image
+----
+POST /api/gallery
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|FormDataParameter|file|file|true|file|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|201||<<GallerySo>>
+|###
+
+#### Consumes
+
+* multipart/form-data
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* gallery
+
+### Get list of images
+----
+GET /api/gallery/embed
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|url|url|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<EmbedSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* gallery
+
+### Get list of images
+----
+GET /api/gallery/list
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<GallerySo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* gallery
+
+### Sync images
+----
+GET /api/gallery/sync
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<GallerySo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* gallery
+
+### Delete image
+----
+DELETE /api/gallery/{image}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|image|image|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|204||No Content
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* gallery
+
+### Get image data by id
+----
+GET /api/gallery/{image}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|image|Image internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<GallerySo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* gallery
+
+### Delete image fom Facebook
+----
+DELETE /api/image
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|hash|Facebook Image Hash|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|204||No Content
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* image
+
+### Upload image to Facebook
+----
+POST /api/image
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|name|Facebook Image Name|true|string|
+|FormDataParameter|file|File entity|true|file|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|201||<<ImageSo>> array
+|###
+
+#### Consumes
+
+* multipart/form-data
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* image
+
+### Get list of images by hash
+----
+GET /api/image
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|hashes|Images hashes|true|multi string array|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<ImageDataSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* image
+
+### Get list of images
+----
+GET /api/image/list
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<ImageDataSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* image
+
+### Create Facebook page
+----
+POST /api/page
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|BodyParameter|request|request|true|<<CreatePageSo>>|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|201||<<PageDataSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* page
+
+### Sync Facebook pages
+----
+PUT /api/page/facebook/sync
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<PageDataSo>> array
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* page
+
+### Get User Facebook pages
+----
+GET /api/page/list
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<PageDataSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* page
+
+### Update Facebook page
+----
+PUT /api/page/{page}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|page|Facebook page internal id|true|string|
+|BodyParameter|request|Update Facebook page request|true|<<CreatePageSo>>|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<PageDataSo>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* page
+
+### Get User Facebook page by internal id
+----
+GET /api/page/{page}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|page|Facebook page internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<PageDataSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* page
+
+### Find countries by q
+----
+GET /api/search/countries
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|country|Country name|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<LocationDataSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* search
+
+### Find interests by q
+----
+GET /api/search/interests
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|QueryParameter|interests|Interest|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200||<<InterestDataSo>> array
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* search
+
+### Ad Account Statistics
+----
+GET /api/stats
+----
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200|OK|<<StatisticsSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* stats
+
+### Campaign Statistics
+----
+GET /api/stats/{campaign}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200|OK|<<StatisticsSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* stats
+
+### Adset Statistics
+----
+GET /api/stats/{campaign}/{adset}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|Adset internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200|OK|<<StatisticsSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* stats
+
+### Ad Statistics
+----
+GET /api/stats/{campaign}/{adset}/{ad}
+----
+
+#### Parameters
+[options#"header"]
+|###
+|Type|Name|Description|Required|Schema|Default
+|PathParameter|campaign|Campaign internal id|true|string|
+|PathParameter|adset|Adset internal id|true|string|
+|PathParameter|ad|Ad internal id|true|string|
+|###
+
+#### Responses
+[options#"header"]
+|###
+|HTTP Code|Description|Schema
+|200|OK|<<StatisticsSo>>
+|500|500 message|<<Error>>
+|###
+
+#### Consumes
+
+* application/json
+
+#### Produces
+
+* application/json
+
+#### Tags
+
+* stats
+
+## Definitions
+### AccountSo
+:hardbreaks:
+Account response entity
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|ext_id|User internal id|false|string|
+|name|User name|false|string|
+|token|User token|false|string|
+|###
+
+### AdAccountSo
+:hardbreaks:
+Ad Account response entity
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|account_id|The ID of the ad account|true|string|
+|account_status|Status of the account 
+* 1 # ACTIVE
+* 2 # DISABLED
+* 3 # UNSETTLED
+* 7 # PENDING_RISK_REVIEW
+* 9 # IN_GRACE_PERIOD
+* 100 # PENDING_CLOSURE
+* 101 # CLOSED
+* 102 # PENDING_SETTLEMENT
+* 201 # ANY_ACTIVE
+* 202 # ANY_CLOSED|false|integer (int32)|
+|age|Amount of time the ad account has been open, in days|false|number (float)|
+|amount_spent|Current total amount spent by the account. This can be reset.|false|string|
+|asset_score|Relevance score of an asset|false|integer (int32)|
+|balance|Bill amount due|false|string|
+|capabilities|Capabilities|false|string array|
+|created_time|The time the account was created in ISO 8601 format.|false|string|
+|currency|The currency used for the account, based on the corresponding value in the account settings.|false|string|
+|default||false|boolean|
+|disable_reason|The reason why the account was disabled. Possible reasons are:
+* 0 # NONE
+* 1 # ADS_INTEGRITY_POLICY
+* 2 # ADS_IP_REVIEW
+* 3 # RISK_PAYMENT
+* 4 # GRAY_ACCOUNT_SHUT_DOWN|false|integer (int32)|
+|ext_id|Ad Account internal id|false|string|
+|fb_message|Facebook status message|false|string|
+|fb_status|Facebook status|false|enum (NOT_SYNCED, SYNCED)|
+|fbid|Facebook id|false|string|
+|funding_source_details|* ID # ID of the payment method
+* COUPON # Details of the Facebook Ads Coupon from the payment method
+* AMOUNT # Amount of Facebook Ads Coupon
+* CURRENCY # Currency of the Facebook Ads Coupon
+* DISPLAY_AMOUNT # How the amount of Facebook Ads Coupon is displayed
+* EXPIRATION # When the coupon will expire
+* DISPLAY_STRING # How the payment method is shown
+* TYPE # Type of the funding source|false|<<FundingSourceDetails>>|
+|has_migrated_permissions|Whether this account has migrated permissions|false|boolean|
+|id|The string act_{ad_account_id}|true|string|
+|is_personal|If this is a personal or business account|false|integer (int32)|
+|last_used_time|Last used time of this object by the current viewer|false|string|
+|min_campaign_group_spend_cap|The minimum required spend cap of campaign group|false|string|
+|min_daily_budget|The minimum daily budget for this ad account|false|integer (int32)|
+|name|Name of the account. If the account name is not set, the name of the first admin visible to the user will be returned|false|string|
+|notifications_enabled||false|boolean|
+|owner|The ID of the account owner|false|string|
+|prepay_account||false|boolean|
+|pxl_account_id|Connected Account|true|string|
+|spend_cap|The maximum that can be spent by this account after which campaigns will be paused. A value of 0 signifies no spending-cap and setting a new spend cap only applies to spend AFTER the time at which you set it. Value specified in basic unit of the currency, e.g. cents for USD.|false|string|
+|timezone_name|Name for the time zone|false|string|
+|timezone_offset_hours_utc|Time Zone difference from UTC|false|integer (int32)|
+|###
+
+### AdSetSo
+:hardbreaks:
+An ad set response
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|bid_amount|Bid amount for this adset|true|integer (int32)|
+|billing_event|The billing event that this adset is using|false|enum (APP_INSTALLS, IMPRESSIONS, LINK_CLICKS, OFFER_CLAIMS, PAGE_LIKES, POST_ENGAGEMENT, VIDEO_VIEWS)|
+|buying_type|Buying type of ad campaign. Possible values are: 
+* AUCTION (default)
+* FIXED_CPM (for premium self serve ads)
+* RESERVED (for reach and frequency ads)|false|enum (AUCTION, FIXED_CPM, RESERVED)|
+|campaign_ext_id|Campaign id|true|string|
+|campaign_group_id|Campaign group id|false|string|
+|daily_budget|The daily budget defined in your account currency, allowed only for ad sets with a duration (difference between end_time and start_time) longer than 24 hours. 
+Either a daily_budget or a lifetime_budget must be specified.|false|integer (int32)|
+|end_time|End time, required when lifetime_budget is specified. e.g. 2015-03-12 23:59:59-07:00 or 2015-03-12 23:59:59 PDT. When creating a set with a daily budget, specify end_time#0 to set the set to be ongoing and have no end date. UTC UNIX timestamp|false|string|
+|ext_id|Ad set internal id|true|string|
+|fb_ad_campaign_status||false|enum (ACTIVE, PAUSED, ARCHIVED, DELETED, CAMPAIGN_GROUP_PAUSED)|
+|fb_message|Facebook status message|false|string|
+|fb_status|Facebook status|false|enum (NOT_SYNCED, SYNCED)|
+|fbid|Facebook id|false|string|
+|lifetime_budget|Lifetime budget, defined in your account currency. If specified, you must also specify an end_time.
+Either a daily_budget or a lifetime_budget must be specified.|false|integer (int32)|
+|name|Set name, max length of 100 characters.|true|string|
+|optimization_goal|What the ad set is optimizing for|false|enum (NONE, APP_INSTALLS, CLICKS, ENGAGED_USERS, EXTERNAL, EVENT_RESPONSES, IMPRESSIONS, LINK_CLICKS, OFFER_CLAIMS, OFFSITE_CONVERSIONS, PAGE_ENGAGEMENT, PAGE_LIKES, POST_ENGAGEMENT, REACH, SOCIAL_IMPRESSIONS, VIDEO_VIEWS)|
+|promoted_object|The object this ad set is promoting across all its ads. Required with certain campaign objectives|false|<<PromotedObject>>|
+|pxl_account_id|Connected Account|true|string|
+|redownload|Allows you to specify that you would like to retrieve all fields of the set in your response. Default value: false.|false|boolean|
+|start_time|Time start|false|string|
+|targeting|An ad set's targeting structure. "countries" is required.|false|<<Targeting>>|
+|###
+
+### AdSo
+:hardbreaks:
+Ad response entity
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|adgroup_status|Available values are: 
+ * ACTIVE PAUSED The ad will first go through ad review, and will have the status 
+ * PENDING_REVIEW before it finishes review and reverts back to your selected status of 
+ * ACTIVE or PAUSED. During testing, it is recommended to set ads to a PAUSED status so as to not incur accidental spend.|false|enum (ACTIVE, PAUSED, DELETED, PENDING_REVIEW, CAMPAIGN_PAUSED)|
+|adset_ext_id|AdSet id|true|string|
+|bid_info|A dictionary of :<CENT_VALUE> that you place on your bid, based on the bid_type from its ad set:
+ * For CPM, use {'IMPRESSIONS':<MIN_2_CENTS>}
+ * For CPC, use {'CLICKS':<MIN_1_CENT>}
+ * For ABSOLUTE_OCPM, use {'ACTIONS':<MIN_1_CENT>, 'REACH':<MIN_2_CENTS>, 'CLICKS':<MIN_1_CENT>, 'SOCIAL':<MIN_1_CENT>}
+ * For CPA, use {'ACTIONS':min_1_cent}).|false|string|
+|campaign_id|ID of the ad set to put the ad group into|true|string|
+|conversion_specs|The ad's conversion specification, see Conversion Specs. If the bidding options are ABSOLUTE_OCPM or CPA, the spec will be set automatically on the ad agroup. No need to pass this via the call. You may use this field to define a custom conversion spec.|false|string|
+|created_time|Ad created time|true|string|
+|creative|Create an ad creative first, then reference the ad creative in this field by setting the value to  {'creative_id':<ad_creative_id>}|true|<<Creative>>|
+|creative_ext_id|Creative internal id|true|string|
+|ext_id|Ad internal id|true|string|
+|fb_message|Facebook status message|false|string|
+|fb_status|Facebook status|false|enum (NOT_SYNCED, SYNCED)|
+|fbid|Facebook id|false|string|
+|name|Name of ad group|true|string|
+|objective|Objective of an ad group. The ad group will be validated against the objective. Allowed values are:
+ * NONE (default)
+ * CANVAS_APP_INSTALLS
+ * CANVAS_APP_ENGAGEMENT
+ * EVENT_RESPONSES
+ * LOCAL_AWARENESS
+ * PAGE_LIKES
+ * POST_ENGAGEMENT
+ * OFFER_CLAIMS
+ * WEBSITE_CONVERSIONS
+ * MOBILE_APP_INSTALLS
+ * MOBILE_APP_ENGAGEMENT
+ * WEBSITE_CLICKS
+ * VIDEO_VIEWS
+no, except if you are running an app ad (objective of *_APP_*). If specified, the ad group must pass the validation requirements.|false|enum (NONE, CANVAS_APP_INSTALLS, CANVAS_APP_ENGAGEMENT, EVENT_RESPONSES, LOCAL_AWARENESS, PAGE_LIKES, POST_ENGAGEMENT, OFFER_CLAIMS, WEBSITE_CONVERSIONS, MOBILE_APP_INSTALLS, MOBILE_APP_ENGAGEMENT, WEBSITE_CLICKS, VIDEO_VIEWS)|
+|pxl_account_id|Connected Account|true|string|
+|redownload|Allows you to specify that you would like all fields of the ad group returned in your response.|false|boolean|
+|social_prefs|Whether or not to show social context for share actions. This option is applicable to only link ads from a page. It can be either ALLOW_SHARES or NONE. This field cannot be changed after creation.|false|string array|
+|tracking_specs|The ad's tracking specification. This field will be defaulted based on the objective, if not set to NONE, or based on the ad creative. You may also specify a custom tracking spec, see Tracking Specs|false|string|
+|view_tags|View tags are tags that fire when an impression is served. They must follow the requirements below. Cannot be used with mobile app install ads or mobile app ads for engagement. Only available for ad accounts with view tag capabilities and apps with Ads API standard access.|false|string array|
+|###
+
+### CallToAction
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|type||false|enum (BOOK_TRAVEL, DOWNLOAD, GET_DIRECTIONS, LEARN_MORE, SHOP_NOW, SIGN_UP, WATCH_MORE, CONTACT_US)|
+|###
+
+### CampaignSo
+:hardbreaks:
+Facebook Synchronization object
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|adaccount_id|Connected Ad Account|true|string|
+|buying_type|This field will help Facebook make future optimizations to delivery, pricing, and limits. All ad sets in this campaign must match the buying type.|false|enum (AUCTION, FIXED_CPM, RESERVED)|
+|campaign_group_status|Possible values are ACTIVE (default) PAUSED. If the campaign_group_status field is set to PAUSED, any active ad sets and ads will be paused and its campaign_status will be CAMPAIGN_GROUP_PAUSED.|false|enum (ACTIVE, PAUSED, DELETED)|
+|ext_id|Campaign internal id|true|string|
+|fb_message|Facebook status message|false|string|
+|fb_status|Facebook status|false|enum (NOT_SYNCED, SYNCED)|
+|fbid|Facebook id|false|string|
+|name|User-defined name of this campaign|true|string|
+|objective|Objective of this ad campaign. If it is specified the API will validate that any ad groups created under the campaign match that objective:
+ * NONE,
+ * CANVAS_APP_INSTALLS,
+ * CANVAS_APP_ENGAGEMENT,
+ * EVENT_RESPONSES,
+ * LOCAL_AWARENESS,
+ * PAGE_LIKES,
+ * POST_ENGAGEMENT,
+ * OFFER_CLAIMS,
+ * WEBSITE_CONVERSIONS,
+ * MOBILE_APP_INSTALLS,
+ * MOBILE_APP_ENGAGEMENT,
+ * WEBSITE_CLICKS,
+ * VIDEO_VIEWS|false|enum (NONE, CANVAS_APP_INSTALLS, CANVAS_APP_ENGAGEMENT, EVENT_RESPONSES, LOCAL_AWARENESS, PAGE_LIKES, POST_ENGAGEMENT, OFFER_CLAIMS, WEBSITE_CONVERSIONS, MOBILE_APP_INSTALLS, MOBILE_APP_ENGAGEMENT, WEBSITE_CLICKS, VIDEO_VIEWS)|
+|pxl_account_id|Connected Account|true|string|
+|###
+
+### ChildAttachements
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|description||false|string|
+|image_hash||false|string|
+|link||false|string|
+|name||false|string|
+|picture||false|string|
+|###
+
+### Cities
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|distance_unit||false|string|
+|key||false|string|
+|radius||false|string|
+|###
+
+### ClaimPageToBusinessManagerRequest
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|access_type||false|string|
+|page_id||false|string|
+|permitted_roles||false|string array|
+|###
+
+### ClaimResponse
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|access_status||false|string|
+|###
+
+### Coordinates
+:hardbreaks:
+Coordinates of Place
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|latitude|Latitude|false|number (double)|
+|longitude|Longitude|false|number (double)|
+|###
+
+### CreateAdSetSo
+:hardbreaks:
+An ad set is a group of ads that share the same daily or lifetime budget, schedule, bid type, bid info, and targeting data. Sets enable you to group ads according to your criteria, and you can retrieve the ad-related statistics that apply to a set. The individual ads have separate bids and targeting
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|bid_amount|Bid amount for this adset|true|integer (int32)|
+|billing_event|The billing event that this adset is using|false|enum (APP_INSTALLS, IMPRESSIONS, LINK_CLICKS, OFFER_CLAIMS, PAGE_LIKES, POST_ENGAGEMENT, VIDEO_VIEWS)|
+|buying_type|Buying type of ad campaign. Possible values are: 
+* AUCTION (default)
+* FIXED_CPM (for premium self serve ads)
+* RESERVED (for reach and frequency ads)|false|enum (AUCTION, FIXED_CPM, RESERVED)|
+|campaign_group_id|Campaign group id|false|string|
+|daily_budget|The daily budget defined in your account currency, allowed only for ad sets with a duration (difference between end_time and start_time) longer than 24 hours. 
+Either a daily_budget or a lifetime_budget must be specified.|false|integer (int32)|
+|end_time|End time, required when lifetime_budget is specified. e.g. 2015-03-12 23:59:59-07:00 or 2015-03-12 23:59:59 PDT. When creating a set with a daily budget, specify end_time#0 to set the set to be ongoing and have no end date. UTC UNIX timestamp|false|string|
+|fb_ad_campaign_status||false|enum (ACTIVE, PAUSED, ARCHIVED, DELETED, CAMPAIGN_GROUP_PAUSED)|
+|lifetime_budget|Lifetime budget, defined in your account currency. If specified, you must also specify an end_time.
+Either a daily_budget or a lifetime_budget must be specified.|false|integer (int32)|
+|name|Set name, max length of 100 characters.|true|string|
+|optimization_goal|What the ad set is optimizing for|false|enum (NONE, APP_INSTALLS, CLICKS, ENGAGED_USERS, EXTERNAL, EVENT_RESPONSES, IMPRESSIONS, LINK_CLICKS, OFFER_CLAIMS, OFFSITE_CONVERSIONS, PAGE_ENGAGEMENT, PAGE_LIKES, POST_ENGAGEMENT, REACH, SOCIAL_IMPRESSIONS, VIDEO_VIEWS)|
+|promoted_object|The object this ad set is promoting across all its ads. Required with certain campaign objectives|false|<<PromotedObject>>|
+|redownload|Allows you to specify that you would like to retrieve all fields of the set in your response. Default value: false.|false|boolean|
+|start_time|Time start|false|string|
+|targeting|An ad set's targeting structure. "countries" is required.|false|<<Targeting>>|
+|###
+
+### CreateAdSo
+:hardbreaks:
+Create ad entity
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|adgroup_status|Available values are: 
+ * ACTIVE PAUSED The ad will first go through ad review, and will have the status 
+ * PENDING_REVIEW before it finishes review and reverts back to your selected status of 
+ * ACTIVE or PAUSED. During testing, it is recommended to set ads to a PAUSED status so as to not incur accidental spend.|false|enum (ACTIVE, PAUSED, DELETED, PENDING_REVIEW, CAMPAIGN_PAUSED)|
+|bid_info|A dictionary of :<CENT_VALUE> that you place on your bid, based on the bid_type from its ad set:
+ * CPM {'IMPRESSIONS':<MIN_2_CENTS>}
+ * CPC {'CLICKS':<MIN_1_CENT>}
+ * ABSOLUTE_OCPM {'ACTIONS':<MIN_1_CENT>, 'REACH':<MIN_2_CENTS>, 'CLICKS':<MIN_1_CENT>, 'SOCIAL':<MIN_1_CENT>}
+ * For CPA {'ACTIONS':min_1_cent}).|false|string|
+|campaign_id|ID of the ad set to put the ad group into|true|string|
+|conversion_specs|The ad's conversion specification, see Conversion Specs. If the bidding options are ABSOLUTE_OCPM or CPA, the spec will be set automatically on the ad agroup. No need to pass this via the call. You may use this field to define a custom conversion spec.|false|string|
+|creative|Create an ad creative first, then reference the ad creative in this field by setting the value to  {'creative_id':<ad_creative_id>}|true|<<Creative>>|
+|name|Name of ad group|true|string|
+|objective|Objective of an ad group. The ad group will be validated against the objective. Allowed values are:
+ * NONE (default)
+ * CANVAS_APP_INSTALLS
+ * CANVAS_APP_ENGAGEMENT
+ * EVENT_RESPONSES
+ * LOCAL_AWARENESS
+ * PAGE_LIKES
+ * POST_ENGAGEMENT
+ * OFFER_CLAIMS
+ * WEBSITE_CONVERSIONS
+ * MOBILE_APP_INSTALLS
+ * MOBILE_APP_ENGAGEMENT
+ * WEBSITE_CLICKS
+ * VIDEO_VIEWS
+no, except if you are running an app ad (objective of *_APP_*). If specified, the ad group must pass the validation requirements.|false|enum (NONE, CANVAS_APP_INSTALLS, CANVAS_APP_ENGAGEMENT, EVENT_RESPONSES, LOCAL_AWARENESS, PAGE_LIKES, POST_ENGAGEMENT, OFFER_CLAIMS, WEBSITE_CONVERSIONS, MOBILE_APP_INSTALLS, MOBILE_APP_ENGAGEMENT, WEBSITE_CLICKS, VIDEO_VIEWS)|
+|redownload|Allows you to specify that you would like all fields of the ad group returned in your response.|false|boolean|
+|social_prefs|Whether or not to show social context for share actions. This option is applicable to only link ads from a page. It can be either ALLOW_SHARES or NONE. This field cannot be changed after creation.|false|string array|
+|tracking_specs|The ad's tracking specification. This field will be defaulted based on the objective, if not set to NONE, or based on the ad creative. You may also specify a custom tracking spec, see Tracking Specs|false|string|
+|view_tags|View tags are tags that fire when an impression is served. They must follow the requirements below. Cannot be used with mobile app install ads or mobile app ads for engagement. Only available for ad accounts with view tag capabilities and apps with Ads API standard access.|false|string array|
+|###
+
+### CreateCampaignSo
+:hardbreaks:
+With ad campaigns, you can now group ad sets together and retrieve unique statistics across multiple Facebook sets.
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|buying_type|This field will help Facebook make future optimizations to delivery, pricing, and limits. All ad sets in this campaign must match the buying type.|false|enum (AUCTION, FIXED_CPM, RESERVED)|
+|campaign_group_status|Possible values are ACTIVE (default) PAUSED. If the campaign_group_status field is set to PAUSED, any active ad sets and ads will be paused and its campaign_status will be CAMPAIGN_GROUP_PAUSED.|false|enum (ACTIVE, PAUSED, DELETED)|
+|name|User-defined name of this campaign|true|string|
+|objective|Objective of this ad campaign. If it is specified the API will validate that any ad groups created under the campaign match that objective:
+ * NONE,
+ * CANVAS_APP_INSTALLS,
+ * CANVAS_APP_ENGAGEMENT,
+ * EVENT_RESPONSES,
+ * LOCAL_AWARENESS,
+ * PAGE_LIKES,
+ * POST_ENGAGEMENT,
+ * OFFER_CLAIMS,
+ * WEBSITE_CONVERSIONS,
+ * MOBILE_APP_INSTALLS,
+ * MOBILE_APP_ENGAGEMENT,
+ * WEBSITE_CLICKS,
+ * VIDEO_VIEWS|false|enum (NONE, CANVAS_APP_INSTALLS, CANVAS_APP_ENGAGEMENT, EVENT_RESPONSES, LOCAL_AWARENESS, PAGE_LIKES, POST_ENGAGEMENT, OFFER_CLAIMS, WEBSITE_CONVERSIONS, MOBILE_APP_INSTALLS, MOBILE_APP_ENGAGEMENT, WEBSITE_CLICKS, VIDEO_VIEWS)|
+|###
+
+### CreateCreativeSo
+:hardbreaks:
+An ad creative object is an instance of a specific creative which is being used to define the creative field of one or more ad groups.
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|actor_id|The Facebook object ID that is the actor for a link ad (not connected to a Page)|false|string|
+|body|The body of the ad|false|string|
+|creative_id|Creative Facebook id|false|string|
+|follow_redirect|When adding social context to a link ad (not connected to a Page), providing this parameter indicates that Facebook should follow any HTTP redirects encountered at the link_url in order to find the Facebook object to apply social context from. The follow_redirect value provided at create time is not a property of the creative and can't be retrieved afterwards.|false|boolean|
+|image_file|Reference to a local image file to upload for use in creatives. You should specify either and image_file or an image_url.|false|string|
+|image_hash|Image ID for an image you can use in creatives|false|string|
+|image_url|A URL for the image for this creative. You should specify either and image_file or an image_url.|false|string|
+|link_url|Used to identify a specific landing tab on the Page (e.g. a Page tab app) by the Page tab's URL. See connection objects (https://developers.facebook.com/docs/reference/ads-api/connectionobjects/) for retrieving Page tabs' URLs. app_data (https://developers.facebook.com/docs/authentication/signed_request/) parameters may be added to the url to pass data to a tab app.|false|string|
+|name|The name of the creative in the creative library|false|string|
+|object_id|The Facebook object ID that is relevant to the ad and ad type. See connection objects|false|string|
+|object_story_id|The ID of a page post to use in an ad. This ID can be retrieved by using the graph API to query the posts of the page. Note: The ID of the post is returned in the following format: <Page_ID>_<Story_ID>.|false|string|
+|object_story_spec|The page id and the content to create a new unpublished page post specified using one of link_data, photo_data, video_data, offer_data or text_data.|false|<<ObjectStorySpec>>|
+|object_url|Destination URL for a link ad (not connected to a page)|false|string|
+|title|Title for a link ad (not connected to a page)|false|string|
+|url_tags|A set of query string parameters which will replace or be appended to urls clicked from page post ads, and canvas app install creatives only.|false|string|
+|###
+
+### CreatePageSo
+:hardbreaks:
+Create User Facebook page
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|about|A short Page description. Max length is 155 characters|false|string|
+|address|Address of the Place. Required for Place Page. Only supports one line of address|false|string|
+|category|Value of Page category. It can be used either category or category_enum|false|integer (int32)|
+|category_enum|String enumerated value of Page category. It can be used either category or category_enum|false|string|
+|category_list|A list of Place topic ids for Page. Required for Place Page|false|string array|
+|city_id|Facebook id of city where the Place is located|false|integer (int32)|
+|coordinates|A json object with the coordinates of Place Page. If coordinates is provides, city_id required|false|<<Coordinates>>|
+|cover_photo|Cover photo of the Page|false|<<PageCoverPhoto>>|
+|description|Description of the Page|false|string|
+|location|City, state and country names can be provided to auto-generate city_id.Either city_id or pageLocation object can be used for creating Place Page|false|<<PageLocation>>|
+|name|Name of new Facebook page|true|string|
+|phone|A valid phone number of the Place Page. Required for Place Page|false|string|
+|picture|URL to a profile picture of the Page. Min picture width is 180px, max aspect ratio is 3.0|false|string|
+|website|A valid URL to Page's external website|false|string|
+|zip|A valid zip code of the Place Page, max length is 10 characters|false|string|
+|###
+
+### Creative
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|creative_id||false|string|
+|###
+
+### CreativeSo
+:hardbreaks:
+An ad creative object is an instance of a specific creative which is being used to define the creative field of one or more ad groups.
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|actor_id|The Facebook object ID that is the actor for a link ad (not connected to a Page)|false|string|
+|body|The body of the ad|false|string|
+|creative_id|Creative Facebook id|false|string|
+|ext_id|Creative internal id|false|string|
+|fb_message|Facebook status message|false|string|
+|fb_status|Facebook status|false|enum (NOT_SYNCED, SYNCED)|
+|fbid|Facebook id|false|string|
+|follow_redirect|When adding social context to a link ad (not connected to a Page), providing this parameter indicates that Facebook should follow any HTTP redirects encountered at the link_url in order to find the Facebook object to apply social context from. The follow_redirect value provided at create time is not a property of the creative and can't be retrieved afterwards.|false|boolean|
+|image_file|Reference to a local image file to upload for use in creatives. You should specify either and image_file or an image_url.|false|string|
+|image_hash|Image ID for an image you can use in creatives|false|string|
+|image_url|A URL for the image for this creative. You should specify either and image_file or an image_url.|false|string|
+|link_url|Used to identify a specific landing tab on the Page (e.g. a Page tab app) by the Page tab's URL. See connection objects (https://developers.facebook.com/docs/reference/ads-api/connectionobjects/) for retrieving Page tabs' URLs. app_data (https://developers.facebook.com/docs/authentication/signed_request/) parameters may be added to the url to pass data to a tab app.|false|string|
+|name|The name of the creative in the creative library|false|string|
+|object_id|The Facebook object ID that is relevant to the ad and ad type. See connection objects|false|string|
+|object_story_id|The ID of a page post to use in an ad. This ID can be retrieved by using the graph API to query the posts of the page. Note: The ID of the post is returned in the following format: <Page_ID>_<Story_ID>.|false|string|
+|object_story_spec|The page id and the content to create a new unpublished page post specified using one of link_data, photo_data, video_data, offer_data or text_data.|false|<<ObjectStorySpec>>|
+|object_url|Destination URL for a link ad (not connected to a page)|false|string|
+|pxl_account_id|Connected Account|true|string|
+|title|Title for a link ad (not connected to a page)|false|string|
+|url_tags|A set of query string parameters which will replace or be appended to urls clicked from page post ads, and canvas app install creatives only.|false|string|
+|###
+
+### EmbedImages
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|entropy||false|number (double)|
+|height||false|number (double)|
+|size||false|integer (int32)|
+|url||false|string|
+|width||false|number (double)|
+|###
+
+### EmbedSo
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|images||false|<<EmbedImages>> array|
+|original_url||false|string|
+|###
+
+### FacebookDataResponseSo
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|app_id||false|string|
+|redirect_url||false|string|
+|scope||false|string|
+|###
+
+### FacebookResponse
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|success||false|boolean|
+|###
+
+### FundingSourceDetails
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|display_string||false|string|
+|id||false|string|
+|type||false|integer (int32)|
+|###
+
+### GallerySo
+:hardbreaks:
+Gallery model
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|etag||false|string|
+|ext_id|Image internal id|false|string|
+|url|Image URL|false|string|
+|###
+
+### ImageDataSo
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|creatives|A list of ad creative ID's that this ad image is being used in|false|string array|
+|hash|The hash which uniquely identifies the image.|false|string|
+|height|The height of the image at the url specified by the url field.|false|string|
+|id|A string of account_id:hash|false|string|
+|original_height|The height of the image that was originally uploaded|false|string|
+|original_width|The width of the image that was originally uploaded.|false|string|
+|url|A temporary URL which the image can be retrieved at.|false|string|
+|width|The width of the image at the url specified by the url field.|false|string|
+|###
+
+### ImageSo
+:hardbreaks:
+Facebook Image Response
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|hash|Image Hash|false|string|
+|url|Image URL|false|string|
+|###
+
+### InterestDataSo
+:hardbreaks:
+Facebook interests
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|audience_size|Estimated audience size of the target audience|false|string|
+|description|Description|false|string|
+|id|Facebook ID of the interest targeting|false|string|
+|name|Name of the interest targeting|false|string|
+|path|Includes the category and any parent categories the targeting falls into|false|string array|
+|topic|Topic|false|string|
+|###
+
+### LinkData
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|call_to_action||false|<<CallToAction>>|
+|caption||false|string|
+|child_attachments||false|<<ChildAttachements>> array|
+|description||false|string|
+|image_crops||false|string|
+|image_hash||false|string|
+|link||false|string|
+|message||false|string|
+|name||false|string|
+|picture||false|string|
+|###
+
+### Location
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|cities||false|<<Cities>> array|
+|countries||false|string array|
+|location_types||false|string array|
+|regions||false|<<TargetingKey>> array|
+|zips||false|<<TargetingKey>> array|
+|###
+
+### LocationDataSo
+:hardbreaks:
+Facebook Location data
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|country_code|Country Code|false|string|
+|country_name|Country Name|false|string|
+|key|Location Key|false|string|
+|name|Location Name|false|string|
+|region|Region Name|false|string|
+|region_id|Region Id|false|string|
+|supports_city|Is Supported Country Cities|false|boolean|
+|supports_region|Is Supported Country Region|false|boolean|
+|type|Location Type|false|string|
+|###
+
+### MultipartFile
+### ObjectStorySpec
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|link_data||false|<<LinkData>>|
+|object_url||false|string|
+|offer_data||false|<<OfferData>>|
+|page_id||false|string|
+|photo_data||false|<<PhotoData>>|
+|text_data||false|<<TextData>>|
+|title||false|string|
+|url_tags||false|string|
+|video_data||false|<<VideoData>>|
+|###
+
+### OfferData
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|barcode||false|string|
+|barcode_type||false|string|
+|claim_limit||false|integer (int32)|
+|coupon_type||false|string|
+|expiration_time||false|string|
+|image_url||false|string|
+|message||false|string|
+|redemption_code||false|string|
+|redemption_link||false|string|
+|reminder_time||false|string|
+|title||false|string|
+|###
+
+### PageCoverPhoto
+:hardbreaks:
+Cover Photo for Facebook Page creation
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|focus_x|Together with focusY, indicates the center position of the crop region|false|integer (int32)|
+|focus_y|Together with focusX, indicates the center position of the crop region|false|integer (int32)|
+|no_feed_story|Boolean, whether to create a newsfeed story, default value is false, means create a newsfeed story|false|boolean|
+|no_notification|Boolean, whether to send notifications, default value is false, means send a notification|false|boolean|
+|offset_x|A value between 0-100. Default value is 50. The value indicates the offset percentage of the total image width from left|false|integer (int32)|
+|offset_y|A value between 0-100. Default value is 50. The value indicates the offset percentage of the total image height from top|false|integer (int32)|
+|url|URL to a cover photo for the Page. The required dimension is 851px wide by 315px.The min width is 400 px, and min height is 150px. The max pixels (width*height) cannot exceed 41375712, and long edge cannot exceed 30000px|false|string|
+|zoom_scale_x|The horizontal zoom scale of the image as percentages of dimensions|false|integer (int32)|
+|zoom_scale_y|The vertical zoom scale of the image as percentages of dimensions|false|integer (int32)|
+|###
+
+### PageDataSo
+:hardbreaks:
+User Facebook Page
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|access_token|Facebook Page token|false|string|
+|category|Page category|false|string|
+|category_list|Facebook User Account Category|false|<<UserAccountCategory>> array|
+|ext_id|Page internal id|true|string|
+|fb_message|Facebook status message|false|string|
+|fb_status|Facebook status|false|enum (NOT_SYNCED, SYNCED)|
+|fbid|Facebook id|false|string|
+|id|Facebook Page id|false|string|
+|name|Facebook Page name|false|string|
+|perms|Facebook Page perms|false|string array|
+|pxl_account_id|Connected Account|true|string|
+|###
+
+### PageLocation
+:hardbreaks:
+Facebook Place Page location. Use instead of cityId
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|city|City name of Facebook Place Page|false|string|
+|country|Country name of Facebook Place Page|false|string|
+|state|State name of Facebook Place Page. For US cities only|false|string|
+|###
+
+### PhotoData
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|caption||false|string|
+|image_hash||false|string|
+|url||false|string|
+|###
+
+### PromotedObject
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|application_id||false|string|
+|custom_event_type||false|enum (ACTIVATE_APP, COMPLETE_REGISTRATION, CONTENT_VIEW, SEARCH, RATE, TUTORIAL_COMPLETION, ADD_TO_CART, ADD_TO_WISHLIST, INITIATED_CHECKOUT, ADD_PAYMENT_INFO, PURCHASE, LEAD, LEVEL_ACHIEVED, ACHIEVEMENT_UNLOCKED, SPENT_CREDITS, OTHER)|
+|object_store_url||false|string|
+|offer_id||false|string|
+|page_id||false|string|
+|pixel_id||false|string|
+|pixel_rule||false|string|
+|product_catalog_id||false|string|
+|product_set_id||false|string|
+|###
+
+### SimpleTargetingObject
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|id||false|string|
+|name||false|string|
+|###
+
+### StatActions
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|action_type||false|string|
+|value||false|number (double)|
+|###
+
+### StatisticsSo
+:hardbreaks:
+Facebook Statistics
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|account_id|ID number that is unique to your ad account.|false|string|
+|actions||false|<<StatActions>> array|
+|adgroup_id|ID number that is unique to each ad.|false|string|
+|app_store_clicks||false|integer (int32)|
+|buying_type||false|string|
+|call_to_action_clicks|Total number of clicks on the call to action button of the ad.|false|integer (int32)|
+|campaign_group_id|ID number that is unique to each ad set.|false|string|
+|campaign_id|ID number that is unique to each campaign.|false|string|
+|card_views||false|integer (int32)|
+|clicks|The number of clicks the ad has received. If you're promoting a Page, event or application, clicks will also include Page likes, event RSVPs or installation of applications directly from the ad.|false|integer (int32)|
+|cost_per_action_type||false|<<StatActions>> array|
+|cost_per_inline_link_click|The average cost per click on links in the ad|false|number (float)|
+|cost_per_inline_post_engagement|The average cost per engagement on the post|false|number (float)|
+|cost_per_total_action|The average you've spent on actions. For example, if you spent $20 and you got 10 Page likes, each one cost an average of $2.|false|number (float)|
+|cost_per_unique_action_type||false|<<StatActions>> array|
+|cost_per_unique_click|The average cost per unique click for these ads, calculated as the amount spent divided by the number of unique clicks received.|false|number (float)|
+|cpc||false|number (float)|
+|cpm|The average cost you've paid to have 1,000 impressions on your ad.|false|number (float)|
+|cpp|The average cost you've paid to have your ad served to 1,000 unique people.|false|number (float)|
+|ctr|The number of clicks you received divided by the number of impressions.|false|number (float)|
+|date_start|The start date for your data.|false|string|
+|date_stop|The end date for your data.|false|string|
+|deeplink_clicks||false|integer (int32)|
+|estimated_ad_recall_rate||false|integer (int32)|
+|estimated_ad_recall_rate_lower_bound||false|integer (int32)|
+|estimated_ad_recall_rate_upper_bound||false|integer (int32)|
+|frequency|The average number of times your ad was served to each person.|false|integer (int32)|
+|impressions|The number of times your ad was served. On our mobile apps an ad is counted as served the first time it's viewed. On all other Facebook interfaces, an ad is served the first time it's placed in a person's News Feed or each time it's placed in the right column.|false|string|
+|inline_link_clicks|Total number of clicks on links in the ad|false|integer (int32)|
+|inline_post_engagement|Total number of engagements on the post|false|integer (int32)|
+|reach|The number of people your ad was served to.|false|integer (int32)|
+|relevance_score|Ad relevance score is multiple metrics related to how your audience responded to your ad.|false|<<StatsScore>>|
+|social_clicks|The number of clicks your ad receives when it's shown with social information|false|integer (int32)|
+|social_impressions|The number of times your ad was served, with social information. For example, if 3 people are served an ad 2 times each and it includes information about a friend liking your Page, it counts as 6 social impressions.|false|integer (int32)|
+|social_reach|The number of people your ad was served to with social information. For example, if 3 people see an ad 2 times each that says a friend likes your Page, it counts as 3 social reaches.|false|integer (int32)|
+|spend|The total amount you've spent so far.|false|number (float)|
+|total_action_value|The total revenue returned from conversions or Facebook credit spends that occurred on your website or app.|false|number (float)|
+|total_actions|The number of actions taken on your ad, Page, app or event after your ad was served to someone, even if they didn't click on it. Actions include Page likes, app installs, conversions, event responses and more. For example, 2 Page likes and 2 comments would be counted as 4 actions.|false|integer (int32)|
+|total_unique_actions|The number of unique people who took an action such as liking your Page or installing your app as a result of your ad. For example, if the same person likes and comments on a post, they will be counted as 1 unique person.|false|integer (int32)|
+|unique_actions||false|<<StatActions>> array|
+|unique_clicks|The total number of unique people who have clicked on your ad. For example, if 3 people click on the same ad 5 times, it will count as 3 unique clicks.|false|integer (int32)|
+|unique_ctr|The number of people who clicked on your ad divided by the number of people you reached. For example, if you received 20 unique clicks and your ad was served to 1,000 unique people, your unique click-through rate would be 2%.|false|number (float)|
+|unique_impressions|The number of individuals this ad was served to on the site.|false|integer (int32)|
+|unique_link_clicks_ctr||false|number (float)|
+|unique_social_clicks|The number of individuals who clicked this ad while it had social context.|false|integer (int32)|
+|unique_social_impressions||false|integer (int32)|
+|website_clicks||false|integer (int32)|
+|website_ctr|An object containing the number of clicks you received on a link in the ad divided by the number of impressions broken down by action type.|false|<<StatActions>> array|
+|###
+
+### StatsScore
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|negative_feedback||false|string|
+|positive_feedback||false|string|
+|score||false|integer (int32)|
+|status||false|string|
+|###
+
+### Targeting
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|age_max||false|integer (int32)|
+|age_min||false|integer (int32)|
+|excluded_geo_locations||false|<<TargetingKey>> array|
+|genders||false|string array|
+|geo_locations||false|<<Location>>|
+|interests||false|<<SimpleTargetingObject>> array|
+|page_types||false|enum (desktop, feed, desktopfeed, mobile, rightcolumn, rightcolumn-and-mobile, home, mobilefeed-and-external, desktop-and-mobile-and-external, feed-and-external, rightcolumn-and-mobile-and-external, mobileexternal, mobilefeed) array|
+|site_category||false|string array|
+|user_device||false|string array|
+|user_os||false|string array|
+|wireless_carrier||false|string array|
+|###
+
+### TargetingKey
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|key||false|string|
+|###
+
+### TextData
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|message||false|string|
+|###
+
+### TokenDataSo
+:hardbreaks:
+Token response
+
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|api_token|User API Token|false|string|
+|pxl_token|User Access Token|false|string|
+|###
+
+### UserAccountCategory
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|id||false|integer (int64)|
+|name||false|string|
+|###
+
+### UserPermissionsRequest
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|page_id||false|string|
+|role||false|string|
+|user||false|string|
+|###
+
+### VideoData
+[options#"header"]
+|###
+|Name|Description|Required|Schema|Default
+|call_to_action||false|object|
+|description||false|string|
+|image_hash||false|string|
+|image_url||false|string|
+|title||false|string|
+|video_id||false|string|
+|###
+
+
